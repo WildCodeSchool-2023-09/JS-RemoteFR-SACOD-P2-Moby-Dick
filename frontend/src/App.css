@@ -39,7 +39,7 @@
   transform: translate(-50%, -50%);
   width: 100px;
   height: 100px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -49,10 +49,10 @@
 }
 
 .play-button:hover {
-  background-color: rgba (0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .play-icon {
   font-size: 2rem;
-  color: #fff;
+  color: #ffffff;
 }
