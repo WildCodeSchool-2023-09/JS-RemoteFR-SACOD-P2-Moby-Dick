@@ -77,3 +77,20 @@
 .music-toggle:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
+
+/* responsive */
+@media (max-width: 768px) {
+  .play-button {
+    width: 80px;
+    height: 80px;
+  }
+
+  .play-icon {
+    font-size: 1.5rem;
+  }
+
+  .music-toggle {
+    width: 80px;
+    height: 80px;
+  }
+}
