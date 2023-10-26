@@ -116,9 +116,15 @@
 .menu {
   flex: 0.1;
   width: 200px;
-  background-color: #333;
   color: white;
   padding: 20px;
+  background: rgb(220, 23, 15);
+  background: linear-gradient(
+    0deg,
+    rgba(220, 23, 15, 1) 0%,
+    rgba(63, 94, 251, 1) 48%,
+    rgba(52, 194, 54, 1) 94%
+  );
 }
 
 .menu .logo {
@@ -133,6 +139,20 @@
 .menu .menu-list li {
   padding: 10px 0;
   border-bottom: 1px solid #555;
+}
+
+/* Ajoutez une classe pour les images du Pokedex et du Sac */
+.menu .menu-list li button {
+  position: relative;
+}
+
+.menu .menu-list li button img {
+  box-shadow: 0 0 5px #eedf21; /* Ajoute une ombre douce autour de l'image */
+  transition: box-shadow 0.3s; /* Animation de transition pour l'ombre */
+}
+
+.menu .menu-list li button img:hover {
+  box-shadow: 0 0 10px #eedf21; /* Effet "hover" avec une ombre plus prononcée */
 }
 
 .body img {
