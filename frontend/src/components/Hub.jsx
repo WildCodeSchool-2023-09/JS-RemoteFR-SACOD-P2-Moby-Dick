@@ -18,10 +18,14 @@ function Hub() {
             </li>
           ))}
           <li>
-            <img src="./pokedex.png" alt="Pokedex" />
+            <button type="button">
+              <img src="./pokedex.png" alt="Pokedex" />
+            </button>
           </li>
           <li>
-            <img src="./sac.png" alt="Sac" />
+            <button type="button">
+              <img src="./sac.png" alt="Sac" />
+            </button>
           </li>
         </ul>
       </div>
