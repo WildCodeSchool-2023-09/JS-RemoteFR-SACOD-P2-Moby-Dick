@@ -30,7 +30,7 @@
   text-align: center;
 }
 
-/* bouton play */
+/* play button */
 
 .play-button {
   position: absolute;
@@ -55,4 +55,25 @@
 .play-icon {
   font-size: 2rem;
   color: #ffffff;
+}
+
+/* music button */
+
+.music-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.music-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
