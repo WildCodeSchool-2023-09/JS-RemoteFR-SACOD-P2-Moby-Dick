@@ -141,18 +141,17 @@
   border-bottom: 1px solid #555;
 }
 
-/* Ajoutez une classe pour les images du Pokedex et du Sac */
 .menu .menu-list li button {
   position: relative;
 }
 
 .menu .menu-list li button img {
-  box-shadow: 0 0 5px #eedf21; /* Ajoute une ombre douce autour de l'image */
-  transition: box-shadow 0.3s; /* Animation de transition pour l'ombre */
+  box-shadow: 0 0 5px #eedf21;
+  transition: box-shadow 0.3s;
 }
 
 .menu .menu-list li button img:hover {
-  box-shadow: 0 0 10px #eedf21; /* Effet "hover" avec une ombre plus prononcée */
+  box-shadow: 0 0 10px #eedf21;
 }
 
 .body img {
