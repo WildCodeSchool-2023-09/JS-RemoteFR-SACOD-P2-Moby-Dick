@@ -143,6 +143,9 @@
 
 .menu .menu-list li button {
   position: relative;
+  background: none;
+  border-radius: 10px;
+  border: none;
 }
 
 .menu .menu-list li button img {
