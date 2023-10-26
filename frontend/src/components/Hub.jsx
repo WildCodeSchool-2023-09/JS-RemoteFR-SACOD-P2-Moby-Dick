@@ -1,17 +1,28 @@
 function Hub() {
+  const pokemonList = [
+    { name: "Pokemon 1", image: "/menupoke.png" },
+    { name: "Pokemon 2", image: "/menupoke.png" },
+    { name: "Pokemon 3", image: "/menupoke.png" },
+    { name: "Pokemon 4", image: "/menupoke.png" },
+    { name: "Pokemon 5", image: "/menupoke.png" },
+    { name: "Pokemon 6", image: "/menupoke.png" },
+  ];
   return (
     <div className="hub-container">
       <div className="menu">
-        <div className="logo">
-          <img src="/pokeball.png" alt="Pokeball Logo" />
-        </div>
         <ul className="menu-list">
-          <li>Pokemon 1</li>
-          <li>Pokemon 2</li>
-          <li>Pokemon 3</li>
-          <li>Pokemon 4</li>
-          <li>Pokemon 5</li>
-          <li>Pokemon 6</li>
+          {pokemonList.map((pokemon) => (
+            <li key={pokemon.name}>
+              <img src={pokemon.image} alt={pokemon.name} />
+              {pokemon.name}
+            </li>
+          ))}
+          <li>
+            <img src="./pokedex.png" alt="Pokedex" />
+          </li>
+          <li>
+            <img src="./sac.png" alt="Sac" />
+          </li>
         </ul>
       </div>
       <div className="body">
