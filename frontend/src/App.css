@@ -37,19 +37,23 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0,
+    3s;
 }
 
 .play-button:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #eedf21;
+  box-shadow: 0 0 10px #eedf21;
 }
 
 .play-icon {
@@ -63,8 +67,8 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   display: flex;
