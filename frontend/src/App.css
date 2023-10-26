@@ -45,6 +45,11 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.play-button:hover {
+  background-color: rgba (0, 0, 0, 0.7);
 }
 
 .play-icon {
