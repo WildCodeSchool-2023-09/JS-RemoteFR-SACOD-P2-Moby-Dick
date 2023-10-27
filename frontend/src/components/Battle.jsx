@@ -1,28 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const battleGroundImages = [
-  "battlegroundbeach.jpg",
-  "battlegroundbrown.jpg",
-  "battlegroundcavern.jpg",
-  "battlegroundearth.jpg",
-  "battlegroundgrass.jpg",
-  "battlegroundgrass2.jpg",
-  "battlegroundsand.jpg",
-  "battlegroundsnow.jpg",
-  "battlegroundwater.jpg",
+const images = [
+  "background1.png",
+  "background2.png",
+  "background3.png",
+  "background4.png",
+  "background5.png",
+  "background6.png",
+  "background7.png",
+  "background8.png",
+  "background9.png",
 ];
 
 function Battle() {
-  const randomBattleImage =
-    battleGroundImages[Math.floor(Math.random() * battleGroundImages.length)];
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    setSelectedImage(images[randomIndex]);
+  }, []);
 
   return (
     <div className="Battle">
-      <img
-        className="ImgBattle"
-        src={randomBattleImage}
-        alt="random battleground"
-      />
+      {selectedImage && (
+        <img className="battleGround" src={selectedImage} alt="Battleground" />
+      )}
     </div>
   );
 }
