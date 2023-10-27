@@ -1,6 +1,6 @@
 import React from "react";
-/*
-const images = [
+
+const battleGroundImages = [
   "battlegroundbeach.jpg",
   "battlegroundbrown.jpg",
   "battlegroundcavern.jpg",
@@ -11,9 +11,20 @@ const images = [
   "battlegroundsnow.jpg",
   "battlegroundwater.jpg",
 ];
-*/
+
 function Battle() {
-  return <div className="Battle">dd</div>;
+  const randomBattleImage =
+    battleGroundImages[Math.floor(Math.random() * battleGroundImages.length)];
+
+  return (
+    <div className="Battle">
+      <img
+        className="ImgBattle"
+        src={randomBattleImage}
+        alt="random battleground"
+      />
+    </div>
+  );
 }
 
 export default Battle;
