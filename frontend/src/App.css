@@ -111,6 +111,7 @@
 
 .body {
   flex: 1;
+  position: relative;
 }
 
 .menu {
@@ -125,7 +126,53 @@
     rgba(63, 94, 251, 1) 48%,
     rgba(52, 194, 54, 1) 94%
   );
+  align-items: center;
+  justify-content: center;
 }
+
+/* BUILDING BUTTON */
+.building-button {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: none;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  text-align: center;
+  line-height: 150px;
+  transition: transform 0.3s;
+  border-radius: 50%;
+}
+
+.building-button:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  background-image: url("./town-arene.png");
+  background-size: 215%;
+}
+
+.building-button:nth-child(2) {
+  top: 20%;
+  left: 20%;
+  background-image: url("./town-center.png");
+  background-size: 187%;
+}
+
+.building-button:nth-child(3) {
+  top: 30%;
+  left: 30%;
+  background-image: url("./town-shop.png");
+  background-size: 177%;
+}
+
+.building-button:hover {
+  box-shadow: 0 0 50px #2fc032;
+}
+
+/* MENU */
 
 .menu .logo {
   text-align: center;
@@ -139,6 +186,8 @@
 .menu .menu-list li {
   padding: 10px 0;
   border-bottom: 1px solid #555;
+  display: flex;
+  align-items: center;
 }
 
 .menu .menu-list li button {
@@ -160,6 +209,7 @@
 .body img {
   width: 100%;
   height: auto;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {

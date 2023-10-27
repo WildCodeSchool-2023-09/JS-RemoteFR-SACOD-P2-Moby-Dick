@@ -30,6 +30,27 @@ function Hub() {
         </ul>
       </div>
       <div className="body">
+        <button
+          type="button"
+          className="building-button"
+          style={{ top: "14.8%", left: "46.5%" }}
+        >
+          .
+        </button>
+        <button
+          type="button"
+          className="building-button"
+          style={{ top: "62.5%", left: "45.8%" }}
+        >
+          .
+        </button>
+        <button
+          type="button"
+          className="building-button"
+          style={{ top: "58.59%", left: "21.2%" }}
+        >
+          .
+        </button>
         <img src="./town.png" alt="Hub" />
       </div>
     </div>
