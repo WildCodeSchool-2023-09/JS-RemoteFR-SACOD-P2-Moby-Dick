@@ -220,4 +220,16 @@
 .battleGround {
   width: 100%;
   height: auto;
+  position: absolute;
+
+  z-index: 10;
+}
+
+.trainers {
+  position: absolute;
+  z-index: 20;
+  width: 15rem;
+  right: 35vw;
+  height: 65vh;
+  width: auto;
 }
