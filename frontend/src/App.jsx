@@ -10,11 +10,10 @@ import PokeCenter from "./components/PokeCenter";
 function App() {
   return (
     <div>
+      <NavBar />
       <Home />
       <Hub />
-      <NavBar />
       <BattleWild />
-      <NavBar />
       <Battle />
       <PokeCenter />
       <Footer />
