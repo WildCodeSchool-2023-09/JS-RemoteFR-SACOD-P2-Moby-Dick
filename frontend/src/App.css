@@ -71,18 +71,6 @@
   text-align: center;
 }
 
-/* RESPONSIVE HOME */
-
-@media (max-width: 768px) {
-  .play-button {
-    width: 80px;
-    height: 80px;
-  }
-
-  .play-icon {
-    font-size: 1.5rem;
-  }
-}
 
 /* PLAY BUTTON */
 
@@ -136,13 +124,6 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* RESPONSIVE BUTTON MUSIC */
-@media (max-width: 768px) {
-  .music-toggle {
-    width: 80px;
-    height: 80px;
-  }
-}
 
 /* HUB */
 
@@ -203,13 +184,4 @@
   height: auto;
 }
 
-@media (max-width: 768px) {
-  .menu {
-    width: 100px;
-    padding: 10px;
-  }
 
-  .menu .menu-list li {
-    padding: 5px 0;
-  }
-}
