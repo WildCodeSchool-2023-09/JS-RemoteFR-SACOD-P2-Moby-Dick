@@ -331,6 +331,7 @@
   width: 100%;
   height: auto;
   z-index: 1;
+}
 
 .menu .menu-list li button img {
   box-shadow: 0 0 5px #eedf21;
