@@ -402,6 +402,10 @@ footer div {
     width: 80px;
     height: 80px;
   }
+    .menu {
+    width: 100px;
+    padding: 10px;
+  }
 }
 
 /* HUB */
@@ -463,11 +467,6 @@ footer div {
   height: auto;
 }
 
-@media (max-width: 768px) {
-  .menu {
-    width: 100px;
-    padding: 10px;
-  }
 
   .menu .menu-list li {
     padding: 5px 0;
