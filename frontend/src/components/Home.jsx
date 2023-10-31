@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 
 function Home() {
-  const [isMusicPlaying, setIsMusicPlaying] = useState(true);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
 
   const toggleMusic = () => {
     setIsMusicPlaying(!isMusicPlaying);
+
+    const audioElement = document.getElementById("background-music");
+    if (isMusicPlaying) {
+      audioElement.pause();
+    } else {
+      audioElement.play();
+    }
   };
+
   return (
     <div className="home-container">
       <video autoPlay muted loop className="background-video">
@@ -17,8 +25,8 @@ function Home() {
       <button type="button" onClick={toggleMusic} className="music-toggle">
         {isMusicPlaying ? "🔕" : "🎵"}
       </button>
-      <audio autoPlay loop>
-        {isMusicPlaying && <source src="./son-accueil.mp3" type="audio/mpeg" />}
+      <audio id="background-music" loop>
+        <source src="./Generique.mp3" type="audio/mpeg" />
         <track kind="captions" label="French" srcLang="fr" src="" default />
       </audio>
     </div>
