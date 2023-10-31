@@ -408,6 +408,7 @@
 .image-button:hover::before {
   display: block;
   opacity: 1;
+}
 
 /*POKECENTER*/
 
