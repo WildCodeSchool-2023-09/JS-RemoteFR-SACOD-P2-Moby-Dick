@@ -39,7 +39,6 @@
   box-shadow: 0.5rem 0.5rem 0.25rem rgba(28, 95, 30, 1);
   border: 0;
   font-size: 2vh;
-
 }
 
 /* HOME INTERFACE VIDEO */
@@ -237,7 +236,7 @@
   height: auto;
 }
 
-  .menu .menu-list li {
+.menu .menu-list li {
     padding: 5px 0;
   }
 
@@ -301,9 +300,9 @@
 }
 
 
-  .menu .menu-list li {
+.menu .menu-list li {
     padding: 5px 0;
-  }
+}
 
 /*POKECENTER*/
 
@@ -577,6 +576,4 @@ footer div {
   .menu .menu-list li {
     padding: 5px 0;
   }
-}
-
 }
