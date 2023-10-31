@@ -38,7 +38,6 @@
   border-radius: 15%;
   box-shadow: 0.5rem 0.5rem 0.25rem rgba(28, 95, 30, 1);
   border: 0;
-  font-size: 2vh;
 }
 
 /* HOME INTERFACE VIDEO */
@@ -117,6 +116,23 @@
   color: #ffffff;
 }
 
+/* MUSIC */
+
+.music-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
 /* MUSIC BUTTON */
 
 .music-toggle {
@@ -139,6 +155,7 @@
 }
 
 /* RESPONSIVE BUTTON MUSIC */
+
 @media (max-width: 768px) {
   .music-toggle {
     width: 80px;
@@ -150,6 +167,112 @@
 
 .hub-container {
   display: flex;
+}
+
+.body {
+  flex: 1;
+  position: relative;
+}
+
+.menu {
+  flex: 0.1;
+  width: 200px;
+  color: white;
+  padding: 20px;
+  background: rgb(220, 23, 15);
+  background: linear-gradient(
+    0deg,
+    rgba(220, 23, 15, 1) 0%,
+    rgba(63, 94, 251, 1) 48%,
+    rgba(52, 194, 54, 1) 94%
+  );
+  align-items: center;
+  justify-content: center;
+}
+
+/* BUILDING BUTTON */
+
+.building-button {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: none;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  text-align: center;
+  line-height: 150px;
+  transition: transform 0.3s;
+  border-radius: 50%;
+}
+
+.building-button:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  background-image: url("./town-arene.png");
+  background-size: 215%;
+}
+
+.building-button:nth-child(2) {
+  top: 20%;
+  left: 20%;
+  background-image: url("./town-center.png");
+  background-size: 187%;
+}
+
+.building-button:nth-child(3) {
+  top: 30%;
+  left: 30%;
+  background-image: url("./town-shop.png");
+  background-size: 177%;
+}
+
+.building-button:hover {
+  box-shadow: 0 0 10px #ffd700;
+}
+
+/* RESPONSIVE BUILDING BUTTON */
+
+@media (max-width: 768px) {
+  .building-button {
+    width: 100px;
+    height: 100px;
+  }
+
+  .building-button:nth-child(1) {
+    top: 5%;
+    left: 5%;
+  }
+
+  .building-button:nth-child(2) {
+    top: 15%;
+    left: 15%;
+  }
+
+  .building-button:nth-child(3) {
+    top: 25%;
+    left: 25%;
+  }
+}
+
+/* MENU */
+
+.menu .logo {
+  text-align: center;
+}
+
+.menu .menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.menu .menu-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #555;
+  display: flex;
+  align-items: center;
 }
 
 .body {
@@ -203,6 +326,21 @@
 .body img {
   width: 100%;
   height: auto;
+  z-index: 1;
+}
+
+.menu .menu-list li button img {
+  box-shadow: 0 0 5px #eedf21;
+  transition: box-shadow 0.3s;
+}
+
+.menu .menu-list li button img:hover {
+  box-shadow: 0 0 10px #eedf21;
+}
+
+.body img {
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 768px) {
@@ -210,6 +348,59 @@
     width: 100px;
     padding: 10px;
   }
+}
+
+/* BUTTON HUB */
+
+.buttons-hub {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding: 7vh;
+  z-index: 2;
+}
+
+.buttons-hub button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  border-radius: 50%;
+}
+
+.buttons-hub button:hover {
+  box-shadow: 0 0 10px #eedf21;
+}
+
+.image-button {
+  position: relative;
+  margin-right: 10px;
+}
+
+.image-button::before {
+  content: attr(data-description);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  display: none;
+  z-index: 1;
+  transition: opacity 0.2s;
+  opacity: 0;
+}
+
+.image-button:hover::before {
+  display: block;
+  opacity: 1;
 }
 
 /*POKECENTER*/

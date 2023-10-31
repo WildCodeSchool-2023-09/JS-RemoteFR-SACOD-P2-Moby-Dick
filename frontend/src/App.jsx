@@ -11,9 +11,9 @@ function App() {
   return (
     <div>
       <NavBar />
-      <BattleWild />
       <Home />
       <Hub />
+      <BattleWild />
       <Battle />
       <PokeCenter />
       <Footer />
