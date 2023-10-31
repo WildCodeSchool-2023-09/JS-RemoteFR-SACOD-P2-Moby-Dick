@@ -1,5 +1,6 @@
 import NavBar from "./components/NavBar";
 import Battle from "./components/Battle";
+import BattleWild from "./components/BattleWild";
 import Home from "./components/Home";
 import Hub from "./components/Hub";
 import Footer from "./components/Footer";
@@ -9,6 +10,8 @@ import PokeCenter from "./components/PokeCenter";
 function App() {
   return (
     <div>
+      <NavBar />
+      <BattleWild />
       <Home />
       <NavBar />
       <Hub />
