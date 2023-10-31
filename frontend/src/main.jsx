@@ -1,9 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-/* import ErrorPage from "./error-pages"; */
-
-/* import App from "./App"; */
 import Home from "./components/Home";
 import Hub from "./components/Hub";
 import NavBar from "./components/NavBar";
