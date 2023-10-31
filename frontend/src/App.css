@@ -74,7 +74,6 @@
 }
 
 /* PLAY BUTTON */
-
 .play-button {
   position: absolute;
   top: 50%;
@@ -105,7 +104,6 @@
 }
 
 /* MUSIC BUTTON */
-
 .music-toggle {
   position: absolute;
   top: 20px;
@@ -177,6 +175,8 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+
+
 /* HUB */
 
 .hub-container {
@@ -237,8 +237,8 @@
 }
 
 .menu .menu-list li {
-    padding: 5px 0;
-  }
+  padding: 5px 0;
+}
 
 /* HUB */
 
@@ -299,11 +299,9 @@
   height: auto;
 }
 
-
 .menu .menu-list li {
-    padding: 5px 0;
+  padding: 5px 0;
 }
-
 /*POKECENTER*/
 
 .pokeCenterImg {
@@ -419,7 +417,6 @@ footer div {
   text-align: center;
 }
 
-
 /* PLAY BUTTON */
 
 .play-button {
@@ -471,7 +468,6 @@ footer div {
 .music-toggle:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
-
 
 /* HUB */
 
@@ -532,7 +528,6 @@ footer div {
   height: auto;
 }
 
-
 /* BATTLE */
 
 .battleGround {
@@ -554,22 +549,22 @@ footer div {
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
-.music-toggle {
+  .music-toggle {
     width: 80px;
     height: 80px;
   }
-.menu {
+  .menu {
     width: 100px;
     padding: 10px;
   }
-.play-button {
+  .play-button {
     width: 80px;
     height: 80px;
   }
-.play-icon {
+  .play-icon {
     font-size: 1.5rem;
   }
-.menu .menu-list li {
+  .menu .menu-list li {
     padding: 5px 0;
   }
 }
