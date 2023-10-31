@@ -402,7 +402,7 @@ footer div {
     width: 80px;
     height: 80px;
   }
-    .menu {
+  .menu {
     width: 100px;
     padding: 10px;
   }
@@ -467,10 +467,8 @@ footer div {
   height: auto;
 }
 
-
-  .menu .menu-list li {
-    padding: 5px 0;
-  }
+.menu .menu-list li {
+  padding: 5px 0;
 }
 
 /* BATTLE */
