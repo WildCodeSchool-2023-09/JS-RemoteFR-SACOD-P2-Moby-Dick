@@ -13,7 +13,6 @@ function App() {
       <NavBar />
       <BattleWild />
       <Home />
-      <NavBar />
       <Hub />
       <Battle />
       <PokeCenter />
