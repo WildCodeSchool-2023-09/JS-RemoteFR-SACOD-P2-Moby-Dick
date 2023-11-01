@@ -7,6 +7,7 @@ function Hub() {
     { name: "Pokemon 5", image: "/menupoke.png" },
     { name: "Pokemon 6", image: "/menupoke.png" },
   ];
+
   return (
     <div className="hub-container">
       <div className="menu">
@@ -31,8 +32,39 @@ function Hub() {
       </div>
       <div className="body">
         <img src="./town.png" alt="Hub" />
+        <div className="buttons-hub">
+          <button
+            type="button"
+            className="image-button"
+            data-description="Arène 👑"
+          >
+            <img src="arene-icon.png" alt="Arene" />
+          </button>
+          <button
+            type="button"
+            className="image-button"
+            data-description="Pokécenter ❤️"
+          >
+            <img src="pokecenter-icon.png" alt="Pokecenter" />
+          </button>
+          <button
+            type="button"
+            className="image-button"
+            data-description="Pokéshop 🛍️"
+          >
+            <img src="pokeshop-icon.png" alt="Pokeshop" />
+          </button>
+          <button
+            type="button"
+            className="image-button"
+            data-description="Combat 🥊"
+          >
+            <img src="poing-icon.png" alt="Combat" />
+          </button>
+        </div>
       </div>
     </div>
   );
 }
+
 export default Hub;
