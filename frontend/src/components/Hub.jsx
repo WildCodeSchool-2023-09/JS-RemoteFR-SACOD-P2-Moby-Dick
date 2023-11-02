@@ -1,35 +1,8 @@
-function Hub() {
-  const pokemonList = [
-    { name: "Pokemon 1", image: "/menupoke.png" },
-    { name: "Pokemon 2", image: "/menupoke.png" },
-    { name: "Pokemon 3", image: "/menupoke.png" },
-    { name: "Pokemon 4", image: "/menupoke.png" },
-    { name: "Pokemon 5", image: "/menupoke.png" },
-    { name: "Pokemon 6", image: "/menupoke.png" },
-  ];
+import { Link } from "react-router-dom";
 
+function Hub() {
   return (
     <div className="hub-container">
-      <div className="menu">
-        <ul className="menu-list">
-          {pokemonList.map((pokemon) => (
-            <li key={pokemon.name}>
-              <img src={pokemon.image} alt={pokemon.name} />
-              {pokemon.name}
-            </li>
-          ))}
-          <li>
-            <button type="button">
-              <img src="./pokedex.png" alt="Pokedex" />
-            </button>
-          </li>
-          <li>
-            <button type="button">
-              <img src="./sac.png" alt="Sac" />
-            </button>
-          </li>
-        </ul>
-      </div>
       <div className="body">
         <img src="./town.png" alt="Hub" />
         <div className="buttons-hub">
@@ -40,13 +13,13 @@ function Hub() {
           >
             <img src="arene-icon.png" alt="Arene" />
           </button>
-          <button
-            type="button"
+          <Link
+            to="/poke-center"
             className="image-button"
             data-description="Pokécenter ❤️"
           >
             <img src="pokecenter-icon.png" alt="Pokecenter" />
-          </button>
+          </Link>
           <button
             type="button"
             className="image-button"
@@ -54,13 +27,13 @@ function Hub() {
           >
             <img src="pokeshop-icon.png" alt="Pokeshop" />
           </button>
-          <button
-            type="button"
+          <Link
+            to="/Battle"
             className="image-button"
             data-description="Combat 🥊"
           >
-            <img src="poing-icon.png" alt="Combat" />
-          </button>
+            <img src="poing-icon.png" alt="Battle" />
+          </Link>
         </div>
       </div>
     </div>
