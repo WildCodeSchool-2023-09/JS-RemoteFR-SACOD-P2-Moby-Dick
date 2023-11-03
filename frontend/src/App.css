@@ -12,6 +12,7 @@
 }
 
 .navBar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -256,7 +257,19 @@
 /* MENU */
 
 .menu {
+  position: relative;
+  width: 200px;
   height: 100%;
+  color: white;
+  padding: 20px;
+  background: rgb(220, 23, 15);
+  background: linear-gradient(
+    0deg,
+    rgba(220, 23, 15, 1) 0%,
+    rgba(63, 94, 251, 1) 48%,
+    rgba(52, 194, 54, 1) 94%
+  );
+  z-index: 20;
 }
 .container {
   display: flex;
@@ -473,6 +486,7 @@ footer {
   justify-content: space-between;
   color: white;
   margin-top: auto;
+  top: 100%;
 }
 
 footer img {
@@ -661,9 +675,11 @@ footer div {
 /* BATTLE */
 
 .battleGround {
-  width: 86.6vw;
-  height: 100vhy;
-  position: relative;
+  position: absolute;
+  height: auto;
+  width: 89.6vw;
+  right: -3%;
+  top: 23.4%;
   z-index: 10;
 }
 
