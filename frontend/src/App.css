@@ -73,7 +73,7 @@
   text-align: center;
 }
 
-/* PLAY BUTTON */
+/* PLAY BUTTON HOME */
 
 .play-button {
   position: absolute;
@@ -104,7 +104,7 @@
   color: #ffffff;
 }
 
-/* MUSIC BUTTON */
+/* MUSIC BUTTON HOME */
 
 .music-toggle {
   position: absolute;
@@ -132,59 +132,22 @@
   position: relative;
 }
 
-.hub-container {
+.body img {
+  width: 86%;
+  height: auto;
+  z-index: 1;
+  float: right;
+}
+
+/* .hub-container {
   display: flex;
-}
-/* BUILDING BUTTON */
-
-.building-button {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  background: none;
-  background-size: cover;
-  background-position: center;
-  border: none;
-  cursor: pointer;
-  z-index: 2;
-  text-align: center;
-  line-height: 150px;
-  transition: transform 0.3s;
-  border-radius: 50%;
-}
-
-.building-button:nth-child(1) {
-  top: 10%;
-  left: 10%;
-  background-image: url("./town-arene.png");
-  background-size: 215%;
-}
-
-.building-button:nth-child(2) {
-  top: 20%;
-  left: 20%;
-  background-image: url("./town-center.png");
-  background-size: 187%;
-}
-
-.building-button:nth-child(3) {
-  top: 30%;
-  left: 30%;
-  background-image: url("./town-shop.png");
-  background-size: 177%;
-}
-
-.building-button:hover {
-  box-shadow: 0 0 10px #ffd700;
-}
+} */
 
 /* MENU */
 
 .menu {
-  flex: 0.1;
-  position: relative;
+  position: static;
   width: 20vh;
-  height: 100%;
   color: white;
   padding: 20px;
   background: rgb(220, 23, 15);
@@ -195,9 +158,9 @@
     rgba(52, 194, 54, 1) 94%
   );
   z-index: 20;
-  float: left;
+  border: 7px double #ffffff;
 }
-.container {
+.menu-container {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -217,6 +180,7 @@
   border-bottom: 1px solid #555;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .menu .menu-list li button {
@@ -224,6 +188,7 @@
   background: none;
   border-radius: 10px;
   border: none;
+  cursor: pointer;
 }
 
 .menu .menu-list li button img {
@@ -235,24 +200,18 @@
   box-shadow: 0 0 10px #eedf21;
 }
 
-.body img {
-  width: 80%;
-  height: auto;
-  z-index: 1;
-  float: right;
-}
-
 /* BUTTON HUB */
 
 .buttons-hub {
   position: absolute;
-  top: 0;
-  left: 0;
+  right: 0;
   max-width: 100%;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   padding: 7vh;
   z-index: 2;
+  align-items: center;
+  transform: translateX(-230%);
 }
 
 .buttons-hub button {
@@ -262,7 +221,7 @@
 }
 
 .buttons-hub img:hover {
-  box-shadow: 0 0 10px #eedf21;
+  box-shadow: 0 0 10px #000000;
   transition: box-shadow 0.3s;
   border-radius: 50%;
 }
@@ -275,7 +234,7 @@
 .image-button::before {
   content: attr(data-description);
   position: absolute;
-  bottom: -30px;
+  bottom: -5vh;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.7);
@@ -430,61 +389,11 @@ footer div {
   }
 }
 
-/* RESPONSIVE HOME */
-
-@media (max-width: 768px) {
-  .play-button {
-    width: 80px;
-    height: 80px;
-  }
-
-  .play-icon {
-    font-size: 1.5rem;
-  }
-}
-
 /* RESPONSIVE BUTTON MUSIC */
 
 @media (max-width: 768px) {
   .music-toggle {
     width: 80px;
     height: 80px;
-  }
-}
-
-/* RESPONSIVE BUILDING BUTTON */
-
-@media (max-width: 768px) {
-  .building-button {
-    width: 100px;
-    height: 100px;
-  }
-
-  .building-button:nth-child(1) {
-    top: 5%;
-    left: 5%;
-  }
-
-  .building-button:nth-child(2) {
-    top: 15%;
-    left: 15%;
-  }
-
-  .building-button:nth-child(3) {
-    top: 25%;
-    left: 25%;
-  }
-}
-
-/* RESPONSIVE HOME */
-
-@media (max-width: 768px) {
-  .play-button {
-    width: 80px;
-    height: 80px;
-  }
-
-  .play-icon {
-    font-size: 1.5rem;
   }
 }
