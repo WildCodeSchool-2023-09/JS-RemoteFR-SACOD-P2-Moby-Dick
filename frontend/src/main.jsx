@@ -55,7 +55,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/BattleWild",
+    path: "/PokeCenter",
     element: (
       <>
         <NavBar />
