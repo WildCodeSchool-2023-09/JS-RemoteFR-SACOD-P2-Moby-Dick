@@ -5,11 +5,21 @@ import Home from "./components/Home";
 import Hub from "./components/Hub";
 import NavBar from "./components/NavBar";
 import Battle from "./components/Battle";
+import Footer from "./components/Footer";
+import MenuPlayer from "./components/MenuPlayer";
+import BattleWild from "./components/BattleWild";
+import PokeCenter from "./components/PokeCenter";
+import "./App.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <>
+        <Home />
+        <Footer />
+      </>
+    ),
   },
   {
     path: "/Hub",
@@ -17,12 +27,43 @@ const router = createBrowserRouter([
       <>
         <NavBar />
         <Hub />
+        <MenuPlayer />
+        <Footer />
       </>
     ),
   },
   {
     path: "/Battle",
-    element: <Battle />,
+    element: (
+      <>
+        <NavBar />
+        <MenuPlayer />
+        <Battle />
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/BattleWild",
+    element: (
+      <>
+        <NavBar />
+        <MenuPlayer />
+        <BattleWild />
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/BattleWild",
+    element: (
+      <>
+        <NavBar />
+        <MenuPlayer />
+        <PokeCenter />
+        <Footer />
+      </>
+    ),
   },
 ]);
 
