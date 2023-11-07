@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
@@ -19,9 +20,11 @@ function Home() {
       <video autoPlay muted loop className="background-video">
         <source src="./accueil.mp4" type="video/mp4" />
       </video>
-      <div className="play-button">
-        <img src="./pokeball.png" alt="play" />
-      </div>
+      <Link to="/Hub">
+        <div className="play-button">
+          <img src="./pokeball.png" alt="play" />
+        </div>
+      </Link>
       <button type="button" onClick={toggleMusic} className="music-toggle">
         {isMusicPlaying ? "🔕" : "🎵"}
       </button>

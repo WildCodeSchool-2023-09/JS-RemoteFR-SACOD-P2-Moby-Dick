@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
 function NavBar() {
   return (
     <div className="navBar">
-      <img className="logo" src="/logo.png" alt="logoPokemonWild" />
+      <Link to="/">
+        <img className="logo" src="/logo.png" alt="logoPokemonWild" />
+      </Link>
       <div className="buttons-container">
         <button className="navButton" type="button">
           Bouton 1

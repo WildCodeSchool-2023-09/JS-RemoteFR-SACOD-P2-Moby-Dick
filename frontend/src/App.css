@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  font-family: "Montserrat", "sans-serif";
+  font-family: "Montserrat", sans-serif;
 }
 
 /* NAVBAR */
@@ -73,20 +73,7 @@
   text-align: center;
 }
 
-/* RESPONSIVE HOME */
-
-@media (max-width: 768px) {
-  .play-button {
-    width: 80px;
-    height: 80px;
-  }
-
-  .play-icon {
-    font-size: 1.5rem;
-  }
-}
-
-/* PLAY BUTTON */
+/* PLAY BUTTON HOME */
 
 .play-button {
   position: absolute;
@@ -117,24 +104,7 @@
   color: #ffffff;
 }
 
-/* MUSIC */
-
-.music-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-/* MUSIC BUTTON */
+/* MUSIC BUTTON HOME */
 
 .music-toggle {
   position: absolute;
@@ -155,15 +125,6 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* RESPONSIVE BUTTON MUSIC */
-
-@media (max-width: 768px) {
-  .music-toggle {
-    width: 80px;
-    height: 80px;
-  }
-}
-
 /* HUB */
 
 .body {
@@ -171,95 +132,18 @@
   position: relative;
 }
 
-.menu {
-  flex: 0.1;
-  width: 200px;
-  color: white;
-  padding: 20px;
-  background: rgb(220, 23, 15);
-  background: linear-gradient(
-    0deg,
-    rgba(220, 23, 15, 1) 0%,
-    rgba(63, 94, 251, 1) 48%,
-    rgba(52, 194, 54, 1) 94%
-  );
-  align-items: center;
-  justify-content: center;
-}
-
-/* BUILDING BUTTON */
-
-.building-button {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  background: none;
-  background-size: cover;
-  background-position: center;
-  border: none;
-  cursor: pointer;
-  z-index: 2;
-  text-align: center;
-  line-height: 150px;
-  transition: transform 0.3s;
-  border-radius: 50%;
-}
-
-.building-button:nth-child(1) {
-  top: 10%;
-  left: 10%;
-  background-image: url("./town-arene.png");
-  background-size: 215%;
-}
-
-.building-button:nth-child(2) {
-  top: 20%;
-  left: 20%;
-  background-image: url("./town-center.png");
-  background-size: 187%;
-}
-
-.building-button:nth-child(3) {
-  top: 30%;
-  left: 30%;
-  background-image: url("./town-shop.png");
-  background-size: 177%;
-}
-
-.building-button:hover {
-  box-shadow: 0 0 10px #ffd700;
-}
-
-/* RESPONSIVE BUILDING BUTTON */
-
-@media (max-width: 768px) {
-  .building-button {
-    width: 100px;
-    height: 100px;
-  }
-
-  .building-button:nth-child(1) {
-    top: 5%;
-    left: 5%;
-  }
-
-  .building-button:nth-child(2) {
-    top: 15%;
-    left: 15%;
-  }
-
-  .building-button:nth-child(3) {
-    top: 25%;
-    left: 25%;
-  }
+.body img {
+  width: 86%;
+  height: auto;
+  z-index: 1;
+  float: right;
 }
 
 /* MENU */
 
 .menu {
-  position: relative;
-  width: 200px;
-  height: 100%;
+  position: static;
+  width: 20vh;
   color: white;
   padding: 20px;
   background: rgb(220, 23, 15);
@@ -270,8 +154,9 @@
     rgba(52, 194, 54, 1) 94%
   );
   z-index: 20;
+  border: 1vh double #ffffff;
 }
-.container {
+.menu-container {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -291,38 +176,7 @@
   border-bottom: 1px solid #555;
   display: flex;
   align-items: center;
-}
-
-.body {
-  flex: 1;
-}
-
-.menu {
-  flex: 0.1;
-  width: 200px;
-  color: white;
-  padding: 20px;
-  background: rgb(220, 23, 15);
-  background: linear-gradient(
-    0deg,
-    rgba(220, 23, 15, 1) 0%,
-    rgba(63, 94, 251, 1) 48%,
-    rgba(52, 194, 54, 1) 94%
-  );
-}
-
-.menu .logo {
-  text-align: center;
-}
-
-.menu .menu-list {
-  list-style: none;
-  padding: 0;
-}
-
-.menu .menu-list li {
-  padding: 10px 0;
-  border-bottom: 1px solid #555;
+  justify-content: center;
 }
 
 .menu .menu-list li button {
@@ -330,6 +184,7 @@
   background: none;
   border-radius: 10px;
   border: none;
+  cursor: pointer;
 }
 
 .menu .menu-list li button img {
@@ -339,41 +194,20 @@
 
 .menu .menu-list li button img:hover {
   box-shadow: 0 0 10px #eedf21;
-}
-
-.body img {
-  width: 100%;
-  height: auto;
-  z-index: 1;
-}
-
-.menu .menu-list li button img {
-  box-shadow: 0 0 5px #eedf21;
-  transition: box-shadow 0.3s;
-}
-
-.menu .menu-list li button img:hover {
-  box-shadow: 0 0 10px #eedf21;
-}
-
-@media (max-width: 768px) {
-  .menu {
-    width: 100px;
-    padding: 10px;
-  }
 }
 
 /* BUTTON HUB */
 
 .buttons-hub {
   position: absolute;
-  top: 0;
-  left: 0;
+  right: 0;
   max-width: 100%;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   padding: 7vh;
   z-index: 2;
+  align-items: center;
+  transform: translateX(-230%);
 }
 
 .buttons-hub button {
@@ -383,7 +217,7 @@
 }
 
 .buttons-hub img:hover {
-  box-shadow: 0 0 10px #eedf21;
+  box-shadow: 0 0 10px #000000;
   transition: box-shadow 0.3s;
   border-radius: 50%;
 }
@@ -396,7 +230,7 @@
 .image-button::before {
   content: attr(data-description);
   position: absolute;
-  bottom: -30px;
+  bottom: -5vh;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.7);
@@ -466,6 +300,26 @@
   top: 50%;
 }
 
+/* BATTLE */
+
+.battleGround {
+  position: absolute;
+  height: auto;
+  width: 89.6vw;
+  right: -3%;
+  top: 23.4%;
+  z-index: 10;
+}
+
+.trainers {
+  position: absolute;
+  z-index: 20;
+  right: 33vw;
+  top: 35vh;
+  height: 50vh;
+  width: auto;
+}
+
 /*FOOTER*/
 
 footer {
@@ -476,7 +330,6 @@ footer {
     rgba(255, 0, 0, 1) 22%,
     rgba(190, 6, 6, 1) 70%
   );
-  position: absolute;
   width: 100%;
   height: 75px;
   font-weight: bold;
@@ -500,38 +353,6 @@ footer div {
   font-size: 23px;
 }
 
-/* HOME INTERFACE VIDEO */
-
-.home-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  text-align: center;
-}
-
 /* RESPONSIVE HOME */
 
 @media (max-width: 768px) {
@@ -545,113 +366,12 @@ footer div {
   }
 }
 
-/* PLAY BUTTON */
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 75px;
-  height: 75px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition:
-    background-color 0.3s,
-    box-shadow 0,
-    3s;
-}
-
-.play-button:hover {
-  background-color: #eedf21;
-  box-shadow: 0 0 10px #eedf21;
-}
-
-.play-icon {
-  font-size: 2rem;
-  color: #ffffff;
-}
-
-/* MUSIC BUTTON */
-
-.music-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.music-toggle:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
 /* RESPONSIVE BUTTON MUSIC */
 @media (max-width: 768px) {
   .music-toggle {
     width: 80px;
     height: 80px;
   }
-  .menu {
-    max-width: 100px;
-    padding: 10px;
-  }
-}
-
-/* HUB */
-
-.hub-container {
-  display: flex;
-}
-
-.body {
-  flex: 1;
-}
-
-.menu {
-  flex: 0.1;
-  width: 200px;
-  color: white;
-  padding: 20px;
-  background: rgb(220, 23, 15);
-  background: linear-gradient(
-    0deg,
-    rgba(220, 23, 15, 1) 0%,
-    rgba(63, 94, 251, 1) 48%,
-    rgba(52, 194, 54, 1) 94%
-  );
-}
-
-.menu .logo {
-  text-align: center;
-}
-
-.menu .menu-list {
-  list-style: none;
-  padding: 0;
-}
-
-.menu .menu-list li {
-  padding: 10px 0;
-  border-bottom: 1px solid #555;
-}
-
-.menu .menu-list li button {
-  position: relative;
-  background: none;
-  border-radius: 10px;
-  border: none;
 }
 
 .menu .menu-list li button img {
@@ -735,136 +455,6 @@ footer div {
 /* RESPONSIVE HOME */
 
 @media (max-width: 768px) {
-  .play-button {
-    width: 80px;
-    height: 80px;
-  }
-
-  .play-icon {
-    font-size: 1.5rem;
-  }
-}
-
-/* PLAY BUTTON */
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 75px;
-  height: 75px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition:
-    background-color 0.3s,
-    box-shadow 0,
-    3s;
-}
-
-.play-button:hover {
-  background-color: #eedf21;
-  box-shadow: 0 0 10px #eedf21;
-}
-
-.play-icon {
-  font-size: 2rem;
-  color: #ffffff;
-}
-
-/* MUSIC BUTTON */
-
-.music-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.music-toggle:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-/* RESPONSIVE BUTTON MUSIC */
-@media (max-width: 768px) {
-  .music-toggle {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-/* HUB */
-
-.hub-container {
-  display: flex;
-}
-
-.body {
-  flex: 1;
-}
-
-.menu {
-  flex: 0.1;
-  width: 200px;
-  color: white;
-  padding: 20px;
-  background: rgb(220, 23, 15);
-  background: linear-gradient(
-    0deg,
-    rgba(220, 23, 15, 1) 0%,
-    rgba(63, 94, 251, 1) 48%,
-    rgba(52, 194, 54, 1) 94%
-  );
-}
-
-.menu .logo {
-  text-align: center;
-}
-
-.menu .menu-list {
-  list-style: none;
-  padding: 0;
-}
-
-.menu .menu-list li {
-  padding: 10px 0;
-  border-bottom: 1px solid #555;
-}
-
-.menu .menu-list li button {
-  position: relative;
-  background: none;
-  border-radius: 10px;
-  border: none;
-}
-
-.menu .menu-list li button img {
-  box-shadow: 0 0 5px #eedf21;
-  transition: box-shadow 0.3s;
-}
-
-.menu .menu-list li button img:hover {
-  box-shadow: 0 0 10px #eedf21;
-}
-
-.body img {
-  width: 100%;
-  height: 100%;
-}
-
-@media (max-width: 768px) {
   .menu {
     width: 100px;
     padding: 10px;
@@ -872,5 +462,14 @@ footer div {
 
   .menu .menu-list li {
     padding: 5px 0;
+  }
+}
+
+/* RESPONSIVE BUTTON MUSIC  */
+
+@media (max-width: 768px) {
+  .music-toggle {
+    width: 80px;
+    height: 80px;
   }
 }
