@@ -130,6 +130,7 @@
 .body {
   flex: 1;
   position: relative;
+  position: relative;
 }
 
 .body img {
