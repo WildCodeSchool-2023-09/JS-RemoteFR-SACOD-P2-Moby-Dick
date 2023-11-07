@@ -692,6 +692,14 @@ footer div {
   width: auto;
 }
 
+.pokemonWild {
+  position: absolute;
+  z-index: 20;
+  right: 4vw;
+  top: 50vh;
+  height: 50vh;
+  width: auto;
+}
 /* HOME INTERFACE VIDEO */
 
 .home-container {
