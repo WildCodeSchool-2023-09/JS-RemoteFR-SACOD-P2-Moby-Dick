@@ -37,12 +37,8 @@ function BattleWild() {
 
   return (
     <div className="Battle">
-      {selectedImage && (
-        <img className="battleGround" src={selectedImage} alt="Battleground" />
-      )}
-      {pokemonImage && (
-        <img className="pokemonWild" src={pokemonImage} alt="Pokemon" />
-      )}
+      <img className="battleGround" src={selectedImage} alt="Battleground" />
+      <img className="pokemonWild" src={pokemonImage} alt="Pokemon" />
     </div>
   );
 }
