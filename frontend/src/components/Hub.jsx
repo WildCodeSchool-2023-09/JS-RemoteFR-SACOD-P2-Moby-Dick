@@ -32,6 +32,13 @@ function Hub() {
         >
           <img src="poing-icon.png" alt="Battle" width={32} />
         </Link>
+        <Link
+          to="/BattleWild"
+          className="image-button"
+          data-description="Chasse 🌿"
+        >
+          <img src="herbe.png" alt="Battle" width={32} />
+        </Link>
       </div>
     </div>
   );
