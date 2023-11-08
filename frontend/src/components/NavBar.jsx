@@ -9,14 +9,14 @@ function NavBar() {
       <div className="buttons-container">
         <Link to="/Hub">
           <button className="navButton" type="button">
-            Hub
+            <img src="home-icon.png" alt="Hub" />
           </button>
         </Link>
         <button className="navButton" type="button">
-          Button 2
+          <img src="compte.png" alt="Hub" />
         </button>
         <button className="navButton" type="button">
-          Button 3
+          <img src="dlc.png" alt="Hub" />
         </button>
       </div>
     </div>
