@@ -7,9 +7,11 @@ function NavBar() {
         <img className="logo" src="/logo.png" alt="logoPokemonWild" />
       </Link>
       <div className="buttons-container">
-        <button className="navButton" type="button">
-          Bouton 1
-        </button>
+        <Link to="/Hub">
+          <button className="navButton" type="button">
+            Hub
+          </button>
+        </Link>
         <button className="navButton" type="button">
           Button 2
         </button>
