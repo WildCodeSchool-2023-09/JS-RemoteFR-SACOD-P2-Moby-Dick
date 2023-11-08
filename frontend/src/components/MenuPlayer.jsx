@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function MenuPlayer() {
   const pokemonList = [
     { name: "Pokemon 1", image: "/menupoke.png" },
@@ -18,9 +20,15 @@ function MenuPlayer() {
           </li>
         ))}
         <li>
-          <button type="button">
+          <Link
+            type="bouton"
+            to="/Pokedex"
+            className="image-button"
+            data-description="Pokedex"
+          >
             <img src="./pokedex.png" alt="Pokedex" />
-          </button>
+          </Link>
+          ;
         </li>
         <li>
           <button type="button">

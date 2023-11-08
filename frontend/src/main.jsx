@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import MenuPlayer from "./components/MenuPlayer";
 import BattleWild from "./components/BattleWild";
 import PokeCenter from "./components/PokeCenter";
+import Pokedex from "./components/Pokedex";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -62,6 +63,18 @@ const router = createBrowserRouter([
         <NavBar />
         <MenuPlayer />
         <PokeCenter />
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/Pokedex",
+
+    element: (
+      <>
+        <NavBar />
+        <MenuPlayer />
+        <Pokedex />
         <Footer />
       </>
     ),
