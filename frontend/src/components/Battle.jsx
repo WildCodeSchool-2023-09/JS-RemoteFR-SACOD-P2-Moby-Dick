@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 const images = [
-  "backgroundbeach.png",
-  "backgroundearth.png",
-  "backgroundforest.png",
-  "backgroundsea.png",
-  "backgroundgrass.png",
+  "backgroundbeach",
+  "backgroundearth",
+  "backgroundforest",
+  "backgroundsea",
+  "backgroundgrass",
 ];
 const trainers = [
   "dresseur1.png",
@@ -34,7 +34,7 @@ const trainers = [
 ];
 
 function Battle() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState("backgroundsea");
   const [selectedTrainer, setSelectedTrainer] = useState(null);
 
   useEffect(() => {
@@ -45,10 +45,7 @@ function Battle() {
   }, []);
 
   return (
-    <div className="Battle">
-      {selectedImage && (
-        <img className="battleGround" src={selectedImage} alt="Battleground" />
-      )}
+    <div className={`battle ${selectedImage}`}>
       {selectedTrainer && (
         <img className="trainers" src={selectedTrainer} alt="Trainers" />
       )}

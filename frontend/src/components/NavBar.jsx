@@ -8,14 +8,26 @@ function NavBar() {
       </Link>
       <div className="buttons-container">
         <Link to="/Hub">
-          <button className="navButton" type="button">
+          <button
+            type="button"
+            className="navButton"
+            data-description="Home 🏠"
+          >
             <img src="home-icon.png" alt="Hub" />
           </button>
         </Link>
-        <button className="navButton" type="button">
+        <button
+          type="button"
+          className="navButton"
+          data-description="Compte ✌️"
+        >
           <img src="compte.png" alt="Hub" />
         </button>
-        <button className="navButton" type="button">
+        <button
+          type="button"
+          className="navButton"
+          data-description="A venir 💫"
+        >
           <img src="dlc.png" alt="Hub" />
         </button>
       </div>
