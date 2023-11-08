@@ -126,7 +126,7 @@
 
 .play-button:hover {
   background-color: #eedf21;
-  box-shadow: 0 0 5px #eedf21;
+  box-shadow: 0 0 10px #eedf21;
 }
 
 .play-icon {
@@ -263,10 +263,8 @@ main {
   background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 5px;
-  border-radius: 23%;
+  border-radius: 50%;
   font-size: 14px;
-  white-space: nowrap;
-  display: none;
   z-index: 1;
   transition: opacity 0.2s;
   opacity: 0;
