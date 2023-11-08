@@ -57,7 +57,7 @@
   transition: opacity 0.2s;
   opacity: 0;
   position: absolute;
-  left: 35%;
+  left: 55%;
 }
 
 .navButton:hover::before {
