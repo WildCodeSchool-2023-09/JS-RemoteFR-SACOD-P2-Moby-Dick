@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import api from "../api";
 
 const images = [
-  "backgroundbeach.png",
-  "backgroundearth.png",
-  "backgroundforest.png",
-  "backgroundsea.png",
-  "backgroundgrass.png",
+  "backgroundbeach",
+  "backgroundearth",
+  "backgroundforest",
+  "backgroundsea",
+  "backgroundgrass",
 ];
 
 function BattleWild() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState("backgroundsea");
   const [pokemonImage, setPokemonImage] = useState(null);
 
   useEffect(() => {
@@ -36,8 +36,7 @@ function BattleWild() {
   }, []);
 
   return (
-    <div className="Battle">
-      <img className="battleGround" src={selectedImage} alt="Battleground" />
+    <div className={`battle ${selectedImage}`}>
       <img className="pokemonWild" src={pokemonImage} alt="Pokemon" />
     </div>
   );

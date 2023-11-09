@@ -7,14 +7,28 @@ function NavBar() {
         <img className="logo" src="/logo.png" alt="logoPokemonWild" />
       </Link>
       <div className="buttons-container">
-        <button className="navButton" type="button">
-          Bouton 1
+        <Link to="/hub">
+          <button
+            type="button"
+            className="navButton"
+            data-description="Home 🏠"
+          >
+            <img src="home-icon.png" alt="Hub" />
+          </button>
+        </Link>
+        <button
+          type="button"
+          className="navButton"
+          data-description="Compte ✌️"
+        >
+          <img src="compte.png" alt="Hub" />
         </button>
-        <button className="navButton" type="button">
-          Button 2
-        </button>
-        <button className="navButton" type="button">
-          Button 3
+        <button
+          type="button"
+          className="navButton"
+          data-description="A venir 💫"
+        >
+          <img src="dlc.png" alt="Hub" />
         </button>
       </div>
     </div>
