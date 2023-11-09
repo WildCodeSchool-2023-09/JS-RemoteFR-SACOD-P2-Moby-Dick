@@ -394,7 +394,7 @@ main {
 .pokemondex {
   width: 100%;
   height: 88.6vh;
-  background-image: url("/pokedexbackground.jpeg");
+  background-image: url("/pokedexbackground.png");
   background-size: cover;
 }
 
