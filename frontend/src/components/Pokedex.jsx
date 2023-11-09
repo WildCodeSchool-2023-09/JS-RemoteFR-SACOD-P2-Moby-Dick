@@ -62,7 +62,6 @@ function Pokemondex() {
 
   return (
     <div className="pokemondex">
-      <h1>Liste de Pokémon</h1>
       <ul>
         {pokemons.map((pokemon) => {
           const isCaptured = capturedPokemons[pokemon.name];

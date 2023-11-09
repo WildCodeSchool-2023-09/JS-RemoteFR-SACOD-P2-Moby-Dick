@@ -20,7 +20,7 @@ function MenuPlayer() {
               type="button"
               onClick={() => removeFromTeam(pokemon)}
             >
-              Retirer de l'équipe
+              🗑️❌
             </button>
           </li>
         ))}
