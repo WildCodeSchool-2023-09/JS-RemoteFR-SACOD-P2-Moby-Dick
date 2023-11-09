@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { PokemonContext } from "./PokemonContext";
 
 function MenuPlayer() {
-  const { team } = useContext(PokemonContext);
+  const { team, removeFromTeam } = useContext(PokemonContext);
 
   return (
     <div className="menu">
@@ -12,6 +12,13 @@ function MenuPlayer() {
           <li key={pokemon.name}>
             <img src={pokemon.imageUrl} alt={pokemon.name} />{" "}
             <span>{pokemon.name}</span>{" "}
+            <button
+              className="buttonRemoveFromTeam"
+              type="button"
+              onClick={() => removeFromTeam(pokemon)}
+            >
+              Retirer de l'équipe
+            </button>
           </li>
         ))}
         <li>

@@ -41,6 +41,7 @@ function PokemonProvider({ children }) {
     <PokemonContext.Provider value={value}>{children}</PokemonContext.Provider>
   );
 }
+
 PokemonProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
