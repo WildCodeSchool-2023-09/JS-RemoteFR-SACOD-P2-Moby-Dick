@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const trainers = [
   "dresseur19.png",
@@ -8,7 +9,7 @@ const trainers = [
 ];
 
 function Arene() {
-  const [selectedTrainer, setSelectedTrainer] = useState(null);
+  const [selectedTrainer, setSelectedTrainer] = useState("dresseur22");
 
   useEffect(() => {
     const randomTrainer = Math.floor(Math.random() * trainers.length);
@@ -21,9 +22,9 @@ function Arene() {
         <img className="trainersArene" src={selectedTrainer} alt="Trainers" />
       )}
       <p className="textArene">Sois le bienvenu jeune dresseur !</p>
-      <button className="areneButton" type="button">
+      <Link to="/battlearene" className="areneButton" type="button">
         A l'attaque !
-      </button>
+      </Link>
     </div>
   );
 }

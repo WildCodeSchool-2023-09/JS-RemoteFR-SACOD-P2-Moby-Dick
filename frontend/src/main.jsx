@@ -10,6 +10,8 @@ import MenuPlayer from "./components/MenuPlayer";
 import BattleWild from "./components/BattleWild";
 import PokeCenter from "./components/PokeCenter";
 import Arene from "./components/Arene";
+import BattleArene from "./components/BattleArene";
+
 import Pokedex from "./components/Pokedex";
 import "./App.css";
 
@@ -65,6 +67,19 @@ const router = createBrowserRouter([
         <main>
           <MenuPlayer />
           <Arene />
+        </main>
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/BattleArene",
+    element: (
+      <>
+        <NavBar />
+        <main>
+          <MenuPlayer />
+          <BattleArene />
         </main>
         <Footer />
       </>
