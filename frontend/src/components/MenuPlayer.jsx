@@ -1,34 +1,33 @@
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { PokemonContext } from "./PokemonContext";
 
 function MenuPlayer() {
-  const pokemonList = [
-    { name: "Pokemon 1", image: "/menupoke.png" },
-    { name: "Pokemon 2", image: "/menupoke.png" },
-    { name: "Pokemon 3", image: "/menupoke.png" },
-    { name: "Pokemon 4", image: "/menupoke.png" },
-    { name: "Pokemon 5", image: "/menupoke.png" },
-    { name: "Pokemon 6", image: "/menupoke.png" },
-  ];
+  const { team, removeFromTeam } = useContext(PokemonContext);
 
   return (
     <div className="menu">
       <ul className="menu-list">
-        {pokemonList.map((pokemon) => (
+        {team.map((pokemon) => (
           <li key={pokemon.name}>
-            <img src={pokemon.image} alt={pokemon.name} />
-            {pokemon.name}
+            <img src={pokemon.imageUrl} alt={pokemon.name} />{" "}
+            <span>
+              {pokemon.name} <br />{" "}
+              <progress className="pokemonHpBar" value={40} max={pokemon.hp} />
+            </span>
+            <button
+              className="buttonRemoveFromTeam"
+              type="button"
+              onClick={() => removeFromTeam(pokemon)}
+            >
+              Retirer de l'équipe
+            </button>
           </li>
         ))}
         <li>
-          <Link
-            type="bouton"
-            to="/Pokedex"
-            className="image-button"
-            data-description="Pokedex"
-          >
+          <Link to="/Pokedex" className="image-button">
             <img src="./pokedex.png" alt="Pokedex" />
           </Link>
-          ;
         </li>
         <li>
           <button type="button">
