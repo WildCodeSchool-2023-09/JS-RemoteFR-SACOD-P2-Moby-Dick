@@ -14,54 +14,57 @@ import "./App.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <>
-        <Home />
-        <Footer />
-      </>
-    ),
+    element: <Home />,
   },
   {
-    path: "/Hub",
+    path: "/hub",
     element: (
       <>
         <NavBar />
-        <Hub />
-        <MenuPlayer />
+        <main>
+          <MenuPlayer />
+          <Hub />
+        </main>
         <Footer />
       </>
     ),
   },
   {
-    path: "/Battle",
+    path: "/battle",
     element: (
       <>
         <NavBar />
-        <MenuPlayer />
-        <Battle />
+        <main>
+          <MenuPlayer />
+          <Battle />
+        </main>
         <Footer />
       </>
     ),
   },
   {
-    path: "/BattleWild",
+    path: "/battlewild",
     element: (
       <>
         <NavBar />
-        <MenuPlayer />
-        <BattleWild />
+        <main>
+          <MenuPlayer />
+          <BattleWild />
+        </main>
         <Footer />
       </>
     ),
   },
   {
-    path: "/PokeCenter",
+    path: "/pokecenter",
 
     element: (
       <>
         <NavBar />
-        <MenuPlayer />
-        <PokeCenter />
+        <main>
+          <MenuPlayer />
+          <PokeCenter />
+        </main>
         <Footer />
       </>
     ),
