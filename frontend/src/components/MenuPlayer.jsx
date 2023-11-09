@@ -11,7 +11,10 @@ function MenuPlayer() {
         {team.map((pokemon) => (
           <li key={pokemon.name}>
             <img src={pokemon.imageUrl} alt={pokemon.name} />{" "}
-            <span>{pokemon.name}</span>{" "}
+            <span>
+              {pokemon.name} <br />{" "}
+              <progress className="pokemonHpBar" value={40} max={pokemon.hp} />
+            </span>
             <button
               className="buttonRemoveFromTeam"
               type="button"
