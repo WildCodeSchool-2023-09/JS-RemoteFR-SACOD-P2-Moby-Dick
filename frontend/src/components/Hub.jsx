@@ -14,7 +14,7 @@ function Hub() {
             <img src="arene-icon.png" alt="Arene" />
           </button>
           <Link
-            to="/PokeCenter"
+            to="/pokecenter"
             className="image-button"
             data-description="Pokécenter ❤️"
           >
@@ -28,7 +28,7 @@ function Hub() {
             <img src="pokeshop-icon.png" alt="Pokeshop" />
           </button>
           <Link
-            to="/Battle"
+            to="/battle"
             className="image-button"
             data-description="Combat 🥊"
           >

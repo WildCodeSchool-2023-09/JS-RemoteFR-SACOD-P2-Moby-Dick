@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/Hub",
+    path: "/hub",
     element: (
       <>
         <NavBar />
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/Battle",
+    path: "/battle",
     element: (
       <>
         <NavBar />
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/BattleWild",
+    path: "/battleWild",
     element: (
       <>
         <NavBar />
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/PokeCenter",
+    path: "/pokecenter",
 
     element: (
       <>
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/Pokedex",
+    path: "/pokedex",
 
     element: (
       <>
