@@ -12,7 +12,7 @@ function Hub() {
           <img src="arene-icon.png" alt="Arene" width={32} />
         </button>
         <Link
-          to="/PokeCenter"
+          to="/pokecenter"
           className="image-button"
           data-description="Pokécenter ❤️"
         >
@@ -26,14 +26,14 @@ function Hub() {
           <img src="pokeshop-icon.png" alt="Pokeshop" width={32} />
         </button>
         <Link
-          to="/Battle"
+          to="/battle"
           className="image-button"
           data-description="Combat 🥊"
         >
           <img src="poing-icon.png" alt="Battle" width={32} />
         </Link>
         <Link
-          to="/BattleWild"
+          to="/battleWild"
           className="image-button"
           data-description="Chasse 🌿"
         >
