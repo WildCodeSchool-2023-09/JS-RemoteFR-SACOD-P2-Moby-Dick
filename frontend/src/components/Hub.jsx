@@ -4,13 +4,9 @@ function Hub() {
   return (
     <div className="body">
       <div className="buttons-hub">
-        <button
-          type="button"
-          className="image-button"
-          data-description="Arène 👑"
-        >
+        <Link to="/arene" className="image-button" data-description="Arène 👑">
           <img src="arene-icon.png" alt="Arene" width={32} />
-        </button>
+        </Link>
         <Link
           to="/pokecenter"
           className="image-button"

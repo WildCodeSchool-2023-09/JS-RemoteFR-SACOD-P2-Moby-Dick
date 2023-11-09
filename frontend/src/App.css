@@ -384,6 +384,65 @@ main {
   width: auto;
 }
 
+/* ARENE */
+
+.arene {
+  width: 100%;
+  background-image: url("/arene.png");
+  background-size: cover;
+}
+
+.textArene {
+  position: absolute;
+  z-index: 20;
+  font-size: 4vh;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 1%;
+  border: 3px solid black;
+  text-align: center;
+  top: 55vh;
+  right: -15vh;
+  transform: translate(-90%, -50%);
+  height: 9.4vh;
+}
+
+.areneButton {
+  position: absolute;
+  z-index: 20;
+  font-size: 4vh;
+  width: auto;
+  background: linear-gradient(
+    30deg,
+    rgba(84, 212, 87, 1) 0%,
+    rgba(47, 192, 50, 1) 60%,
+    rgba(28, 95, 30, 1) 100%
+  );
+  border-radius: 10px;
+  padding: 1%;
+  border: 3px solid black;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  top: 43%;
+  left: 75.6%;
+  transform: translate(-200%, -50%);
+  transition: box-shadow 0.3s;
+}
+
+.areneButton:hover {
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.5);
+}
+
+.trainersArene {
+  position: absolute;
+  z-index: 20;
+  right: 4vw;
+  top: 50vh;
+  height: 70vh;
+  width: auto;
+}
+
 /*FOOTER*/
 
 footer {
