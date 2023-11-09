@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import api from "../api";
+import { PokemonContext } from "./PokemonContext";
 
 function Pokemondex() {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { capturedPokemons, setCaptured, addToTeam } =
+    useContext(PokemonContext);
 
   useEffect(() => {
     const getPokemons = async () => {
@@ -14,24 +17,34 @@ function Pokemondex() {
         const pokemonsDetails = await Promise.all(
           pokemonsData.map(async (pokemon) => {
             const pokemonDetailsResponse = await api.get(pokemon.name);
-
             return {
               name: pokemon.name,
-              imageUrl: pokemonDetailsResponse.data.sprites.front_default,
+              imageUrl: pokemonDetailsResponse.data.sprites?.front_default,
               attack: pokemonDetailsResponse.data.stats.find(
                 (stat) => stat.stat.name === "attack"
-              ).base_stat,
+              )?.base_stat,
               defense: pokemonDetailsResponse.data.stats.find(
                 (stat) => stat.stat.name === "defense"
-              ).base_stat,
+              )?.base_stat,
               hp: pokemonDetailsResponse.data.stats.find(
                 (stat) => stat.stat.name === "hp"
-              ).base_stat,
+              )?.base_stat,
               ...pokemonDetailsResponse.data,
             };
           })
         );
 
+        const capturedStatus = pokemonsDetails.reduce(
+          (statusAccumulator, pokemon) => {
+            return {
+              ...statusAccumulator,
+              [pokemon.name]: true,
+            };
+          },
+          {}
+        );
+
+        setCaptured(capturedStatus);
         setPokemons(pokemonsDetails);
       } catch (error) {
         console.error(
@@ -45,21 +58,36 @@ function Pokemondex() {
     getPokemons();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div>Chargement...</div>;
 
   return (
     <div>
       <h1>Liste de Pokémon</h1>
       <ul>
-        {pokemons.map((pokemon) => (
-          <li key={pokemon.name}>
-            <img src={pokemon.imageUrl} alt={pokemon.name} />
-            <div>{pokemon.name}</div>
-            <div>Attack: {pokemon.attack}</div>
-            <div>Defense: {pokemon.defense}</div>
-            <div>HP: {pokemon.hp}</div>
-          </li>
-        ))}
+        {pokemons.map((pokemon) => {
+          const isCaptured = capturedPokemons[pokemon.name];
+          return (
+            <li key={pokemon.name}>
+              {isCaptured ? (
+                <>
+                  <img src={pokemon.imageUrl} alt={pokemon.name} />
+                  <div>{pokemon.name}</div>
+                  <div>Attaque: {pokemon.attack}</div>
+                  <div>Défense: {pokemon.defense}</div>
+                  <div>PV: {pokemon.hp}</div>
+                  <button type="button" onClick={() => addToTeam(pokemon)}>
+                    Ajouter à l'équipe
+                  </button>
+                </>
+              ) : (
+                <>
+                  <div className="unknown-pokemon">???</div>
+                  <div>???</div>
+                </>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

@@ -1,34 +1,23 @@
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { PokemonContext } from "./PokemonContext";
 
 function MenuPlayer() {
-  const pokemonList = [
-    { name: "Pokemon 1", image: "/menupoke.png" },
-    { name: "Pokemon 2", image: "/menupoke.png" },
-    { name: "Pokemon 3", image: "/menupoke.png" },
-    { name: "Pokemon 4", image: "/menupoke.png" },
-    { name: "Pokemon 5", image: "/menupoke.png" },
-    { name: "Pokemon 6", image: "/menupoke.png" },
-  ];
+  const { team } = useContext(PokemonContext);
 
   return (
     <div className="menu">
       <ul className="menu-list">
-        {pokemonList.map((pokemon) => (
+        {team.map((pokemon) => (
           <li key={pokemon.name}>
-            <img src={pokemon.image} alt={pokemon.name} />
-            {pokemon.name}
+            <img src={pokemon.imageUrl} alt={pokemon.name} />{" "}
+            <span>{pokemon.name}</span>{" "}
           </li>
         ))}
         <li>
-          <Link
-            type="bouton"
-            to="/Pokedex"
-            className="image-button"
-            data-description="Pokedex"
-          >
+          <Link to="/Pokedex" className="image-button">
             <img src="./pokedex.png" alt="Pokedex" />
           </Link>
-          ;
         </li>
         <li>
           <button type="button">

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { PokemonProvider } from "./components/PokemonContext";
 import Home from "./components/Home";
 import Hub from "./components/Hub";
 import NavBar from "./components/NavBar";
@@ -85,6 +86,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <PokemonProvider>
+      <RouterProvider router={router} />
+    </PokemonProvider>
   </React.StrictMode>
 );
