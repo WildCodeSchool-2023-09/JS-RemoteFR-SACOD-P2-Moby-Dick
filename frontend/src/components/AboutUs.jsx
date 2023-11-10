@@ -7,7 +7,7 @@ function AboutUs() {
         <source src="./aboutUs.mp4" type="video/mp4" />
       </video>
       <Link to="/hub">
-        <div className="play-button">
+        <div className="aboutus-button">
           <img src="./home-icon.png" alt="hub" />
         </div>
       </Link>
