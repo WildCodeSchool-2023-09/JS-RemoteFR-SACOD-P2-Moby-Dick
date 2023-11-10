@@ -61,13 +61,12 @@ function Pokemondex() {
   if (loading) return <div>Chargement...</div>;
 
   return (
-    <div>
-      <h1>Liste de Pokémon</h1>
+    <div className="pokemondex">
       <ul>
         {pokemons.map((pokemon) => {
           const isCaptured = capturedPokemons[pokemon.name];
           return (
-            <li key={pokemon.name}>
+            <li key={pokemon.name} className="pokemon-card">
               {isCaptured ? (
                 <>
                   <img src={pokemon.imageUrl} alt={pokemon.name} />

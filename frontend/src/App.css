@@ -179,7 +179,7 @@ main {
 
 .menu {
   color: white;
-  padding: 20px;
+  padding: 10px;
   background: rgb(220, 23, 15);
   background: linear-gradient(
     0deg,
@@ -189,6 +189,8 @@ main {
   );
   z-index: 20;
   border: 7px double #ffffff;
+  height: 88.6vh;
+  overflow: auto;
 }
 .menu-container {
   display: flex;
@@ -203,10 +205,13 @@ main {
 .menu .menu-list {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .menu .menu-list li {
-  padding: 10px 0;
+  padding: 1px;
   border-bottom: 1px solid #555;
   display: flex;
   align-items: center;
@@ -269,7 +274,7 @@ main {
   transition: opacity 0.2s;
   opacity: 0;
   position: absolute;
-  left: 35%;
+  left: 45%;
 }
 
 .image-button:hover::before {
@@ -325,15 +330,6 @@ main {
   cursor: pointer;
 }
 
-.joel {
-  z-index: 20;
-  right: 37%;
-  height: 60vh;
-  position: absolute;
-  width: auto;
-  top: 35%;
-}
-
 /* BATTLE */
 
 .battle {
@@ -379,11 +375,25 @@ main {
   position: absolute;
   z-index: 20;
   right: 10vw;
-  top: 42vh;
+  top: 40vh;
   height: 40vh;
   width: auto;
 }
 
+/* POKEDEX */
+
+.pokemondex {
+  width: 100%;
+  height: 88.6vh;
+  background-image: url("/pokedexbackground.png");
+  background-size: cover;
+}
+
+.pokemon-card {
+  padding: 10px;
+  border: thick double #fcfcd5;
+  text-align: center;
+}
 /* ARENE */
 
 .arene {

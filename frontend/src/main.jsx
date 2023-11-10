@@ -106,8 +106,10 @@ const router = createBrowserRouter([
     element: (
       <>
         <NavBar />
-        <MenuPlayer />
-        <Pokedex />
+        <main>
+          <MenuPlayer />
+          <Pokedex />
+        </main>
         <Footer />
       </>
     ),
