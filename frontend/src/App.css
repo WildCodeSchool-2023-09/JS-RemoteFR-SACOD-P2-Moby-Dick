@@ -334,7 +334,7 @@ main {
 
 .Pokeshop {
   width: 100%;
-  background-image: url("/pokeshop1.png");
+  background-image: url("/pokeshop.png");
   background-size: cover;
 }
 
@@ -347,6 +347,18 @@ main {
   border-radius: 10px;
   padding: 1%;
   right: 12%;
+  border: 3px solid black;
+}
+
+.dlcPokeshop {
+  position: absolute;
+  z-index: 20;
+  font-size: 3vh;
+  top: 85%;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 1%;
+  right: 70%;
   border: 3px solid black;
 }
 
