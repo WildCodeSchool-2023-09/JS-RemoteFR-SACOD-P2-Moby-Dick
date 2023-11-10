@@ -334,7 +334,8 @@ main {
 
 .battle {
   width: 100%;
-  background-size: cover;
+  height: 88.5vh;
+  background-size: 100% 100%;
 }
 
 .backgroundbeach {
@@ -365,8 +366,8 @@ main {
 .trainers {
   position: absolute;
   z-index: 20;
-  right: 33vw;
-  top: 35vh;
+  right: 35vw;
+  top: 25vh;
   height: 40vh;
   width: auto;
 }
@@ -375,7 +376,7 @@ main {
   position: absolute;
   z-index: 20;
   right: 10vw;
-  top: 40vh;
+  top: 35vh;
   height: 40vh;
   width: auto;
 }
