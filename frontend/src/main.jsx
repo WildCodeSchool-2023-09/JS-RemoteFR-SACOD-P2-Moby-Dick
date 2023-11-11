@@ -12,9 +12,9 @@ import BattleWild from "./components/BattleWild";
 import PokeCenter from "./components/PokeCenter";
 import Arene from "./components/Arene";
 import BattleArene from "./components/BattleArene";
-import AboutUs from "./components/AboutUs";
-
+import Pokeshop from "./components/Pokeshop";
 import Pokedex from "./components/Pokedex";
+import AboutUs from "./components/AboutUs";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -96,6 +96,20 @@ const router = createBrowserRouter([
         <main>
           <MenuPlayer />
           <PokeCenter />
+        </main>
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/pokeshop",
+
+    element: (
+      <>
+        <NavBar />
+        <main>
+          <MenuPlayer />
+          <Pokeshop />
         </main>
         <Footer />
       </>

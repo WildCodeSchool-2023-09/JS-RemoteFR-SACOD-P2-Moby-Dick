@@ -256,7 +256,6 @@ main {
   box-shadow: 0 0 10px #000000;
   transition: box-shadow 0.3s;
   border-radius: 50%;
-  z-index: 3;
 }
 
 .buttons-hub img {
@@ -328,6 +327,64 @@ main {
   border: 3px solid black;
   color: white;
   cursor: pointer;
+}
+
+/* POKESHOP */
+
+.Pokeshop {
+  width: 100%;
+  background-image: url("/pokeshop.png");
+  background-size: cover;
+}
+
+.textPokeshop {
+  position: absolute;
+  z-index: 20;
+  font-size: 5vh;
+  top: 9%;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 1%;
+  right: 12%;
+  border: 3px solid black;
+}
+
+.dlcPokeshop {
+  position: absolute;
+  z-index: 20;
+  font-size: 3vh;
+  top: 84.2%;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 1%;
+  right: 65%;
+  border: 3px solid black;
+}
+
+.shopPokemonButton {
+  z-index: 20;
+  right: 40.4%;
+  position: absolute;
+  width: auto;
+  top: 23%;
+  background: rgb(84, 212, 87);
+  background: linear-gradient(
+    30deg,
+    rgba(84, 212, 87, 1) 0%,
+    rgba(47, 192, 50, 1) 60%,
+    rgba(28, 95, 30, 1) 100%
+  );
+  border-radius: 10px;
+  padding: 1%;
+  font-size: 3vh;
+  border: 3px solid black;
+  color: white;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.shopPokemonButton:hover {
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* BATTLE */
