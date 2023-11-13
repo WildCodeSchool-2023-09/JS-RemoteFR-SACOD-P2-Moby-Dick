@@ -13,8 +13,8 @@ import PokeCenter from "./components/PokeCenter";
 import Arene from "./components/Arene";
 import BattleArene from "./components/BattleArene";
 import Pokeshop from "./components/Pokeshop";
-
 import Pokedex from "./components/Pokedex";
+import AboutUs from "./components/AboutUs";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -128,6 +128,10 @@ const router = createBrowserRouter([
         <Footer />
       </>
     ),
+  },
+  {
+    path: "/aboutus",
+    element: <AboutUs />,
   },
 ]);
 

@@ -544,6 +544,48 @@ footer div {
   font-size: 13px;
 }
 
+/* ABOUT US */
+
+.aboutus-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.transparent-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* PLAY BUTTON HOME */
+
+.aboutus-button {
+  position: absolute;
+  top: 10%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  width: 75px;
+  height: 75px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    box-shadow 3s;
+}
+
+.aboutus:hover {
+  background-color: #eedf21;
+  box-shadow: 0 0 10px #eedf21;
+}
+
 /* RESPONSIVE HOME */
 
 @media (max-width: 768px) {
