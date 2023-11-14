@@ -12,6 +12,7 @@ import BattleWild from "./components/BattleWild";
 import PokeCenter from "./components/PokeCenter";
 import Arene from "./components/Arene";
 import BattleArene from "./components/BattleArene";
+import Starter from "./components/Starter";
 import Pokeshop from "./components/Pokeshop";
 import Pokedex from "./components/Pokedex";
 import AboutUs from "./components/AboutUs";
@@ -21,6 +22,19 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/starter",
+    element: (
+      <>
+        <NavBar />
+        <main>
+          <MenuPlayer />
+          <Starter />
+        </main>
+        <Footer />
+      </>
+    ),
   },
   {
     path: "/hub",

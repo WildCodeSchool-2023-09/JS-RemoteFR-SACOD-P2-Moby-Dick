@@ -438,8 +438,62 @@ main {
   width: auto;
 }
 
+/* STARTER */
+
+.starter-container {
+  display: flex;
+  background-image: url(/starter.png);
+  background-size: cover;
+  width: 100%;
+}
+
+.choix-pokemon {
+  position: absolute;
+  z-index: 20;
+  font-size: 4vh;
+  left: 26%;
+  top: 22%;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 1%;
+
+  border: 3px solid black;
+}
+
+/* BUTTON STARTERS */
+
+.buttons-starter {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  margin-left: 22.2%;
+  margin-top: 5.3%;
+}
+
+.buttons-starter button {
+  background: none;
+  border: none;
+}
+.buttons-starter img {
+  width: 21rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.buttons-starter button:hover img {
+  opacity: 1;
+  box-shadow: 0 0 10px #f4f0f08d;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+}
 /* POKEDEX */
 
+.pokemon-card {
+  padding: 10px;
+  border: thick double #fcfcd5;
+  text-align: center;
+}
 .pokemondex {
   width: 100%;
   height: 88.6vh;
@@ -447,11 +501,6 @@ main {
   background-size: cover;
 }
 
-.pokemon-card {
-  padding: 10px;
-  border: thick double #fcfcd5;
-  text-align: center;
-}
 /* ARENE */
 
 .arene {
