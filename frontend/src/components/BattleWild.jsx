@@ -40,7 +40,7 @@ function BattleWild() {
     <div className={`battle ${selectedImage}`}>
       <img className="pokemonWild" src={pokemonImage} alt="Pokemon" />
       <Link to="/hub">
-        <button type="button" className="battleButton" data-description="Fuir">
+        <button type="button" className="battleButton" title="Fuir 🏃">
           <img src="fuir.png" alt="Hub" />
         </button>
       </Link>
