@@ -489,16 +489,51 @@ main {
 }
 /* POKEDEX */
 
-.pokemon-card {
-  padding: 10px;
-  border: thick double #fcfcd5;
-  text-align: center;
-}
 .pokemondex {
   width: 100%;
   height: 88.6vh;
   background-image: url("/pokedexbackground.png");
   background-size: cover;
+  justify-content: space-around;
+}
+
+.pokemondexul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: 7.2rem 1rem;
+}
+
+.pokemon-card {
+  width: 18.45%;
+  margin: 10px;
+  padding: 10px;
+  border: thick double #fcfcd5;
+  text-align: center;
+  background-image: url("/pokedexback.png");
+  background-size: contain;
+  border-radius: 2rem;
+}
+
+.pokemon-card button {
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 4px 10px;
+  cursor: pointer;
+  border: none;
+  margin-top: 10px;
+}
+
+.pokemon-card button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pokemon-card div {
+  color: #dbdbdb;
+  margin-top: -9px; /* Ajustez la valeur négative pour déplacer le texte vers le haut */
+  margin-bottom: 5px;
 }
 
 /* ARENE */
