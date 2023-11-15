@@ -7,7 +7,7 @@ function Pokeshop() {
       <button className="shopPokemonButton" type="button">
         Acheter
       </button>
-      <p className="dlcPokeshop">Disponible bientôt ...</p>
+      <p className="dlcPokeshop">Bientôt disponible ...</p>
     </div>
   );
 }
