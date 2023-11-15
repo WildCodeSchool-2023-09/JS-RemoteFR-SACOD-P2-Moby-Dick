@@ -5,7 +5,8 @@ import { PokemonContext } from "./PokemonContext";
 function Pokemondex() {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { capturedPokemons, setCaptured, addToTeam } =
+
+  const { capturedPokemons, setCaptured, addToTeam, setAllPokemons } =
     useContext(PokemonContext);
 
   useEffect(() => {
@@ -20,6 +21,7 @@ function Pokemondex() {
             return {
               name: pokemon.name,
               imageUrl: pokemonDetailsResponse.data.sprites?.front_default,
+              imageUrlBack: pokemonDetailsResponse.data.sprites?.back_default,
               attack: pokemonDetailsResponse.data.stats.find(
                 (stat) => stat.stat.name === "attack"
               )?.base_stat,
@@ -46,6 +48,7 @@ function Pokemondex() {
 
         setCaptured(capturedStatus);
         setPokemons(pokemonsDetails);
+        setAllPokemons(pokemonsDetails);
       } catch (error) {
         console.error(
           "Erreur lors de la récupération des données des Pokémon",

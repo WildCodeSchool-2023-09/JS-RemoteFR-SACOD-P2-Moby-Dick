@@ -15,6 +15,7 @@ import BattleArene from "./components/BattleArene";
 import Pokeshop from "./components/Pokeshop";
 import Pokedex from "./components/Pokedex";
 import AboutUs from "./components/AboutUs";
+import FightSystem from "./components/FightSystem";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
         <main>
           <MenuPlayer />
           <Battle />
+          <FightSystem />
         </main>
         <Footer />
       </>

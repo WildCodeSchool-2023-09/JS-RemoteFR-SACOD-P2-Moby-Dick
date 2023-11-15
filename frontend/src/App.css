@@ -438,6 +438,15 @@ main {
   width: auto;
 }
 
+.pokemonPlayer {
+  position: absolute;
+  z-index: 20;
+  right: 60vw;
+  top: 58vh;
+  height: 40vh;
+  width: auto;
+}
+
 /* POKEDEX */
 
 .pokemondex {
