@@ -40,7 +40,7 @@ function Pokemondex() {
           (statusAccumulator, pokemon) => {
             return {
               ...statusAccumulator,
-              [pokemon.name]: true,
+              [pokemon.name]: false,
             };
           },
           {}

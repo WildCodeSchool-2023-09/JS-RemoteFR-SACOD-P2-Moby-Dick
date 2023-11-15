@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { PokemonContext } from "./PokemonContext";
 
 function Starter() {
+  const { addToTeam } = useContext(PokemonContext);
+
+  const handleAddToTeam = (pokemon) => {
+    addToTeam(pokemon);
+  };
+
   return (
     <div className="starter-container">
-      <p className="choix-pokemon">
-        Cliquer sur une pokeball pour le pokemon que vous voulez
-      </p>
+      <p className="pokechoice">Chaque aventure débute par un choix</p>
       <div className="buttons-starter">
         <Link
+          onClick={() => handleAddToTeam({ name: "Carapuce" })}
           to="/hub"
           type="button"
           className=".starter-image"
@@ -16,6 +23,7 @@ function Starter() {
           <img src="carapuce.png" alt="Carapuce" />
         </Link>
         <Link
+          onClick={() => handleAddToTeam({ name: "Bulbizarre" })}
           to="/hub"
           type="button"
           className=".starter-image"
@@ -24,6 +32,7 @@ function Starter() {
           <img src="bulbizarre.png" alt="bulbasaur" />
         </Link>
         <Link
+          onClick={() => handleAddToTeam({ name: "Salameche" })}
           to="/hub"
           type="button"
           className=".starter-image"
