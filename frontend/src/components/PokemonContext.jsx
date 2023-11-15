@@ -68,21 +68,7 @@ function PokemonProvider({ children }) {
       )
     );
   };
-  function usePokemonFighter(pokemon) {
-    const fight = (defender) => {
-      const damageMultiplier = Math.random() * 1.5;
-      const baseDamage = Math.floor(Math.random() * pokemon.attack) + 1;
-      const adjustedDamage = Math.round(baseDamage * damageMultiplier);
-      const actualDamage = Math.max(0, adjustedDamage - defender.defense);
-      return actualDamage;
-    };
 
-    const isAlive = () => {
-      return pokemon.currentHp > 0;
-    };
-
-    return { fight, isAlive };
-  }
   const value = useMemo(
     () => ({
       capturedPokemons,
@@ -98,7 +84,6 @@ function PokemonProvider({ children }) {
       generateEnemyTeam,
       removeFromTeam,
       setPokemonHp,
-      usePokemonFighter,
     }),
     [capturedPokemons, team, enemyTeam, allPokemons, setPokemonHp]
   );

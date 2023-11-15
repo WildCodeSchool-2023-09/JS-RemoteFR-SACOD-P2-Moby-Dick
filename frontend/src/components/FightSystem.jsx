@@ -1,104 +1,90 @@
 import React, { useContext, useState, useEffect } from "react";
 import { PokemonContext } from "./PokemonContext";
 
-function PokemonFighter({ pokemon }) {
-  const fight = (defender, setDefenderHp) => {
-    const damageMultiplier = Math.random() * 1.5;
-    const baseDamage = Math.floor(Math.random() * pokemon.attack) + 1;
-    const adjustedDamage = Math.round(baseDamage * damageMultiplier);
-    const actualDamage = Math.max(0, adjustedDamage - defender.defense);
-    const newDefenderHp = Math.max(0, defender.currentHp - actualDamage);
-    setDefenderHp(newDefenderHp);
-    return actualDamage;
-  };
-
-  const isAlive = () => {
-    return pokemon.currentHp > 0;
-  };
-
-  return { fight, isAlive };
-}
-
 function FightSystem() {
   const { team, enemyTeam, generateEnemyTeam, setPokemonHp } =
     useContext(PokemonContext);
   const [battleLog, setBattleLog] = useState([]);
+  const [isGameOver, setIsGameOver] = useState(false);
 
-  const [currentPlayerPokemon, setCurrentPlayerPokemon] = useState(0);
-  const [currentEnemyPokemon, setCurrentEnemyPokemon] = useState(0);
+  const [currentPlayerPokemonIndex, setCurrentPlayerPokemonIndex] = useState(0);
+  const [currentEnemyPokemonIndex, setCurrentEnemyPokemonIndex] = useState(0);
 
-  const playerPokemon = PokemonFighter({ pokemon: currentPlayerPokemon });
-  const enemyPokemon = PokemonFighter({ pokemon: currentEnemyPokemon });
+  function calculateDamage(attacker, defender) {
+    const damageMultiplier = Math.random() * 0.6 + 1.2;
+    const baseDamage = Math.floor(Math.random() * attacker.attack) + 10;
+    const adjustedDamage = Math.round(baseDamage * damageMultiplier);
+    const actualDamage = Math.max(10, adjustedDamage - defender.defense);
+    return actualDamage;
+  }
 
   useEffect(() => {
     generateEnemyTeam();
-    setCurrentPlayerPokemon(team[0]);
-    setCurrentEnemyPokemon(enemyTeam[0]);
-  }, [team, enemyTeam, generateEnemyTeam]);
+  }, [generateEnemyTeam]);
 
-  function getNextAlivePokemon() {
-    return team.find((pokemon) => pokemon.currentHp > 0);
-  }
+  const currentPlayerPokemon = team[currentPlayerPokemonIndex];
+  const currentEnemyPokemon = enemyTeam[currentEnemyPokemonIndex];
 
-  function handleAttack() {
-    try {
-      const damageToEnemy = playerPokemon.fight(
-        currentEnemyPokemon,
-        setPokemonHp
-      );
-      const newEnemyHp = Math.max(
-        0,
-        currentEnemyPokemon.currentHp - damageToEnemy
-      );
-      setPokemonHp(currentEnemyPokemon.name, newEnemyHp);
-
-      const damageToPlayer = enemyPokemon.fight(
-        currentPlayerPokemon,
-        setPokemonHp
-      );
-      const newPlayerHp = Math.max(
-        0,
-        currentPlayerPokemon.currentHp - damageToPlayer
-      );
-      setPokemonHp(currentPlayerPokemon.name, newPlayerHp);
-
+  const handleNextPokemon = (currentIndex, setCurrentIndex) => {
+    const nextIndex = currentIndex + 1;
+    if (nextIndex < team.length) {
+      setCurrentIndex(nextIndex);
+    } else {
+      setIsGameOver(true);
       setBattleLog((prevLog) => [
         ...prevLog,
-        `${currentPlayerPokemon.name} 🤺 inflige ${damageToEnemy} dégâts à ${currentEnemyPokemon.name}`,
-        `${currentEnemyPokemon.name} 🤺 inflige ${damageToPlayer} dégâts à ${currentPlayerPokemon.name}`,
+        "Tous vos Pokémon sont vaincus ! Vous avez perdu !",
       ]);
+    }
+  };
 
-      if (!playerPokemon.isAlive()) {
-        const nextPokemon = setCurrentPlayerPokemon;
-        if (nextPokemon) {
-          setCurrentPlayerPokemon(nextPokemon);
-          setBattleLog((prevLog) => [
-            ...prevLog,
-            `${nextPokemon.name} entre dans l'arène !`,
-          ]);
-        } else {
-          setBattleLog((prevLog) => [
-            ...prevLog,
-            `L'équipe ennemie gagne le combat !`,
-          ]);
-        }
-      } else if (!enemyPokemon.isAlive()) {
-        const nextEnemyPokemon = getNextAlivePokemon(enemyTeam.slice(1));
-        if (nextEnemyPokemon) {
-          setCurrentEnemyPokemon(nextEnemyPokemon);
-          setBattleLog((prevLog) => [
-            ...prevLog,
-            `${nextEnemyPokemon.name} entre dans l'arène !`,
-          ]);
-        } else {
-          setBattleLog((prevLog) => [
-            ...prevLog,
-            `Votre équipe gagne le combat !`,
-          ]);
-        }
+  function handleAttack() {
+    if (!currentPlayerPokemon || !currentEnemyPokemon || isGameOver) return;
+
+    const damageToEnemy = calculateDamage(
+      currentPlayerPokemon,
+      currentEnemyPokemon
+    );
+    const newEnemyHp = Math.max(
+      0,
+      currentEnemyPokemon.currentHp - damageToEnemy
+    );
+    setPokemonHp(currentEnemyPokemon.name, newEnemyHp);
+
+    const damageToPlayer = calculateDamage(
+      currentEnemyPokemon,
+      currentPlayerPokemon
+    );
+    const newPlayerHp = Math.max(
+      0,
+      currentPlayerPokemon.currentHp - damageToPlayer
+    );
+    setPokemonHp(currentPlayerPokemon.name, newPlayerHp);
+
+    setBattleLog((prevLog) => [
+      ...prevLog,
+      `${currentPlayerPokemon.name} inflige ${damageToEnemy} dégâts à ${currentEnemyPokemon.name}`,
+      `${currentEnemyPokemon.name} inflige ${damageToPlayer} dégâts à ${currentPlayerPokemon.name}`,
+    ]);
+
+    if (newPlayerHp <= 0) {
+      handleNextPokemon(
+        currentPlayerPokemonIndex,
+        setCurrentPlayerPokemonIndex
+      );
+    }
+
+    if (newEnemyHp <= 0) {
+      const nextEnemyIndex = currentEnemyPokemonIndex + 1;
+      if (nextEnemyIndex < enemyTeam.length) {
+        setCurrentEnemyPokemonIndex(nextEnemyIndex);
+      } else {
+        setIsGameOver(true);
+        setBattleLog((prevLog) => [
+          ...prevLog,
+          "Vous avez vaincu tous les Pokémon adverses ! Vous avez gagné !",
+        ]);
       }
-    } catch (error) {
-      console.error("Une erreur est survenue lors du combat :", error);
     }
   }
 
@@ -106,28 +92,38 @@ function FightSystem() {
     <div className="fightSystem">
       <div className="combatInfo">
         <div className="playerPokemon">
-          <h3>{team[0].name}</h3>
-          <img
-            className="pokemonPlayer"
-            src={team[0].imageUrlBack}
-            alt="Pokemon player"
-          />
-          <progress max={team[0].hp} value={team[0].currentHp} />
-          <span>
-            HP: {team[0].currentHp}/{team[0].hp}
-          </span>
+          <h3>{currentPlayerPokemon ? currentPlayerPokemon.name : ""}</h3>
+          {currentPlayerPokemon && (
+            <>
+              <img
+                className="pokemonPlayer"
+                src={currentPlayerPokemon.imageUrlBack}
+                alt="Pokemon player"
+              />
+              <progress
+                max={currentPlayerPokemon.hp}
+                value={currentPlayerPokemon.currentHp}
+              />
+              <span>
+                HP: {currentPlayerPokemon.currentHp}/{currentPlayerPokemon.hp}
+              </span>
+            </>
+          )}
         </div>
-        {enemyTeam[0] && (
+        {currentEnemyPokemon && (
           <div className="enemyPokemon">
-            <h3>{enemyTeam[0].name}</h3>
+            <h3>{currentEnemyPokemon.name}</h3>
             <img
               className="pokemonWild"
-              src={enemyTeam[0].imageUrl}
+              src={currentEnemyPokemon.imageUrl}
               alt="Pokemon enemy"
             />
-            <progress max={enemyTeam[0].hp} value={enemyTeam[0].currentHp} />
+            <progress
+              max={currentEnemyPokemon.hp}
+              value={currentEnemyPokemon.currentHp}
+            />
             <span>
-              HP: {enemyTeam[0].currentHp} / {enemyTeam[0].hp}
+              HP: {currentEnemyPokemon.currentHp} / {currentEnemyPokemon.hp}
             </span>
           </div>
         )}
