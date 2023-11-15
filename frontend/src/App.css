@@ -408,6 +408,7 @@ main {
 .buttons-starter {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10rem;
   margin-left: 22.2%;
   margin-top: 5.3%;
