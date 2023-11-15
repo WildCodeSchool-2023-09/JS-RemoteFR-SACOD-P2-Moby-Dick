@@ -10,10 +10,10 @@
 /* NAVBAR */
 .logo {
   width: 5vw;
-  flex-shrink: 0;
+  flex-shrink: 0px;
   height: auto;
   margin: 2vh 0;
-  margin: 0;
+  margin: 0px;
 }
 
 .navBar {
@@ -434,6 +434,15 @@ main {
   z-index: 20;
   right: 10vw;
   top: 35vh;
+  height: 40vh;
+  width: auto;
+}
+
+.pokemonPlayer {
+  position: absolute;
+  z-index: 20;
+  right: 60vw;
+  top: 58vh;
   height: 40vh;
   width: auto;
 }
