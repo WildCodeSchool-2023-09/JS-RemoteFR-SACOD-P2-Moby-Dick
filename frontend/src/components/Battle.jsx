@@ -74,8 +74,6 @@ function Battle() {
           <img className="pokemonWild" src={pokemonImage} alt="Pokemon" />
         </div>
       )}
-
-      {/* Ajoutez le bouton Link ici */}
       <Link to="/hub">
         <button type="button" className="battleButton" title="Fuir 🏃">
           <img src="fuir.png" alt="Hub" />
