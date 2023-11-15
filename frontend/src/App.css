@@ -13,7 +13,7 @@
   flex-shrink: 0px;
   height: auto;
   margin: 2vh 0;
-  margin: 0;
+  margin: 0px;
 }
 
 .navBar {
@@ -446,7 +446,7 @@ main {
   height: 40vh;
   width: auto;
 }
-  
+
 /* STARTER */
 
 .starter-container {
