@@ -632,9 +632,14 @@ footer div {
 
 .aboutus-container {
   position: relative;
-  width: 100%;
+  width: auto;
   height: 100vh;
   overflow: hidden;
+}
+
+.aboutus-container video {
+  width: 100%;
+  height: auto;
 }
 
 .transparent-button {
