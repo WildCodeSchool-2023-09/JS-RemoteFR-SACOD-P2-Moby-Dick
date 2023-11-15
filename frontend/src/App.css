@@ -310,7 +310,7 @@ main {
 
 .healPokemonButton {
   z-index: 20;
-  right: 35%;
+  right: 36%;
   position: absolute;
   width: auto;
   top: 23%;
@@ -464,18 +464,20 @@ main {
 
 .buttons-starter {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 10rem;
-  margin-left: 22.2%;
-  margin-top: 5.3%;
+  gap: 5rem;
+  margin-left: 21.85%;
+  margin-top: 2.7%;
 }
 
 .buttons-starter button {
   background: none;
   border: none;
+  cursor: pointer;
 }
 .buttons-starter img {
-  width: 21rem;
+  width: 12rem;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -487,6 +489,7 @@ main {
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(15px);
 }
+
 /* POKEDEX */
 
 .pokemondex {
@@ -554,7 +557,7 @@ main {
   border: 3px solid black;
   text-align: center;
   top: 55vh;
-  right: -15vh;
+  right: -0vh;
   transform: translate(-90%, -50%);
   height: 9.4vh;
 }
@@ -577,7 +580,7 @@ main {
   cursor: pointer;
   text-align: center;
   top: 43%;
-  left: 75.6%;
+  right: 25vh;
   transform: translate(-200%, -50%);
   transition: box-shadow 0.3s;
 }
@@ -590,7 +593,7 @@ main {
   position: absolute;
   z-index: 20;
   right: 4vw;
-  top: 50vh;
+  top: 29vh;
   height: 70vh;
   width: auto;
 }
