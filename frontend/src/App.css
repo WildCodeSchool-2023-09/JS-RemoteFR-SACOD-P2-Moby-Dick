@@ -407,11 +407,11 @@ main {
 
 .buttons-starter {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 10rem;
-  margin-left: 22.2%;
-  margin-top: 5.3%;
+  align-items: center;
+  gap: 5rem;
+  margin-left: 21.85%;
+  margin-top: 2.7%;
 }
 
 .buttons-starter button {
@@ -420,12 +420,12 @@ main {
   cursor: pointer;
 }
 .buttons-starter img {
-  width: 21rem;
+  width: 12rem;
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-.buttons-starter :hover img {
+.buttons-starter button:hover img {
   opacity: 1;
   box-shadow: 0 0 10px #f4f0f08d;
   border-radius: 50%;
