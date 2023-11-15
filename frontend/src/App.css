@@ -120,13 +120,13 @@
   align-items: center;
   cursor: pointer;
   transition:
-    background-color 0.3s,
-    box-shadow 3s;
+    background-color 0.2s,
+    box-shadow 0.5s;
 }
 
 .play-button:hover {
-  background-color: #eedf21;
-  box-shadow: 0 0 10px #eedf21;
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 20px 10px #eedf21;
 }
 
 .play-icon {
@@ -310,7 +310,7 @@ main {
 
 .healPokemonButton {
   z-index: 20;
-  right: 35%;
+  right: 36%;
   position: absolute;
   width: auto;
   top: 23%;
@@ -445,6 +445,57 @@ main {
   top: 58vh;
   height: 40vh;
   width: auto;
+  
+/* STARTER */
+
+.starter-container {
+  display: flex;
+  background-image: url(/starter.png);
+  background-size: cover;
+  width: 100%;
+}
+
+.choix-pokemon {
+  position: absolute;
+  z-index: 20;
+  font-size: 4vh;
+  left: 26%;
+  top: 22%;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 1%;
+
+  border: 3px solid black;
+}
+
+/* BUTTON STARTERS */
+
+.buttons-starter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin-left: 21.85%;
+  margin-top: 2.7%;
+}
+
+.buttons-starter button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.buttons-starter img {
+  width: 12rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.buttons-starter button:hover img {
+  opacity: 1;
+  box-shadow: 0 0 10px #f4f0f08d;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
 }
 
 /* POKEDEX */
@@ -454,13 +505,48 @@ main {
   height: 88.6vh;
   background-image: url("/pokedexbackground.png");
   background-size: cover;
+  justify-content: space-around;
+}
+
+.pokemondexul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: 7.2rem 1rem;
 }
 
 .pokemon-card {
+  width: 18.45%;
+  margin: 10px;
   padding: 10px;
   border: thick double #fcfcd5;
   text-align: center;
+  background-image: url("/pokedexback.png");
+  background-size: contain;
+  border-radius: 2rem;
 }
+
+.pokemon-card button {
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 4px 10px;
+  cursor: pointer;
+  border: none;
+  margin-top: 10px;
+}
+
+.pokemon-card button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pokemon-card div {
+  color: #dbdbdb;
+  margin-top: -9px; /* Ajustez la valeur négative pour déplacer le texte vers le haut */
+  margin-bottom: 5px;
+}
+
 /* ARENE */
 
 .arene {
@@ -479,7 +565,7 @@ main {
   border: 3px solid black;
   text-align: center;
   top: 55vh;
-  right: -15vh;
+  right: -0vh;
   transform: translate(-90%, -50%);
   height: 9.4vh;
 }
@@ -502,7 +588,7 @@ main {
   cursor: pointer;
   text-align: center;
   top: 43%;
-  left: 75.6%;
+  right: 25vh;
   transform: translate(-200%, -50%);
   transition: box-shadow 0.3s;
 }
@@ -515,7 +601,7 @@ main {
   position: absolute;
   z-index: 20;
   right: 4vw;
-  top: 50vh;
+  top: 29vh;
   height: 70vh;
   width: auto;
 }
@@ -557,20 +643,23 @@ footer div {
 
 .aboutus-container {
   position: relative;
-  width: 100%;
+  width: auto;
   height: 100vh;
   overflow: hidden;
 }
 
+.aboutus-container video {
+  width: 100%;
+  height: auto;
+}
+
 .transparent-button {
-  background-color: transparent;
+  background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
   color: #fff;
 }
-
-/* PLAY BUTTON HOME */
 
 .aboutus-button {
   position: absolute;
@@ -579,20 +668,20 @@ footer div {
   transform: translate(-50%, -50%);
   width: 75px;
   height: 75px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition:
-    background-color 0.3s,
-    box-shadow 3s;
+    background-color 0.2s,
+    box-shadow 0.5s;
 }
 
-.aboutus:hover {
-  background-color: #eedf21;
-  box-shadow: 0 0 10px #eedf21;
+.aboutus-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 20px 10px #eedf21;
 }
 
 /* RESPONSIVE HOME */

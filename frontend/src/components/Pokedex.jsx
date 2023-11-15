@@ -65,7 +65,7 @@ function Pokemondex() {
 
   return (
     <div className="pokemondex">
-      <ul>
+      <ul className="pokemondexul">
         {pokemons.map((pokemon) => {
           const isCaptured = capturedPokemons[pokemon.name];
           return (
