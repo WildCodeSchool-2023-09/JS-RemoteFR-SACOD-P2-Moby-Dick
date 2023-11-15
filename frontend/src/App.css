@@ -438,6 +438,29 @@ main {
   width: auto;
 }
 
+.battleButton {
+  position: absolute;
+  top: 14%;
+  left: 12%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.5s;
+}
+
+.battleButton:hover {
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 20px 10px #eedf21;
+}
+
 /* STARTER */
 
 .starter-container {

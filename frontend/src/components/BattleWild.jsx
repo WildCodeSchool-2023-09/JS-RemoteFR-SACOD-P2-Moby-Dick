@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import api from "../api";
 
 const images = [
@@ -38,6 +39,11 @@ function BattleWild() {
   return (
     <div className={`battle ${selectedImage}`}>
       <img className="pokemonWild" src={pokemonImage} alt="Pokemon" />
+      <Link to="/hub">
+        <button type="button" className="battleButton" data-description="Fuir">
+          <img src="fuir.png" alt="Hub" />
+        </button>
+      </Link>
     </div>
   );
 }
