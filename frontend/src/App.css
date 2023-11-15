@@ -120,13 +120,13 @@
   align-items: center;
   cursor: pointer;
   transition:
-    background-color 0.3s,
-    box-shadow 3s;
+    background-color 0.2s,
+    box-shadow 0.5s;
 }
 
 .play-button:hover {
-  background-color: #eedf21;
-  box-shadow: 0 0 10px #eedf21;
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 20px 10px #eedf21;
 }
 
 .play-icon {
@@ -638,14 +638,12 @@ footer div {
 }
 
 .transparent-button {
-  background-color: transparent;
+  background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
   color: #fff;
 }
-
-/* PLAY BUTTON HOME */
 
 .aboutus-button {
   position: absolute;
@@ -654,20 +652,20 @@ footer div {
   transform: translate(-50%, -50%);
   width: 75px;
   height: 75px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition:
-    background-color 0.3s,
-    box-shadow 3s;
+    background-color 0.2s,
+    box-shadow 0.5s;
 }
 
-.aboutus:hover {
-  background-color: #eedf21;
-  box-shadow: 0 0 10px #eedf21;
+.aboutus-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 20px 10px #eedf21;
 }
 
 /* RESPONSIVE HOME */
