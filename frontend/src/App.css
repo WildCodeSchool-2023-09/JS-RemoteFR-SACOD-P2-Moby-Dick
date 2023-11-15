@@ -515,6 +515,8 @@ main {
 
 /* POKEDEX */
 
+/* POKEDEX */
+
 .pokemondex {
   width: 100%;
   height: 88.6vh;
@@ -532,34 +534,62 @@ main {
 }
 
 .pokemon-card {
+  position: relative;
   width: 18.45%;
   margin: 10px;
-  padding: 10px;
+  padding: 5px;
   border: thick double #fcfcd5;
   text-align: center;
   background-image: url("/pokedexback.png");
   background-size: contain;
   border-radius: 2rem;
+  overflow: hidden;
+}
+
+.pokemon-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.pokemon-card:hover::before {
+  opacity: 1;
 }
 
 .pokemon-card button {
+  position: relative;
+  z-index: 2;
   border-radius: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: #fff;
-  padding: 4px 10px;
+  background-color: rgba(26, 156, 0, 0.892);
+  color: #ffffff;
+  padding: 4px 4px;
   cursor: pointer;
   border: none;
-  margin-top: 10px;
+  margin-top: 20px;
+  border: solid #000000;
+  top: 1%;
 }
 
 .pokemon-card button:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(43, 255, 0, 0.892);
+  color: #000000;
 }
 
 .pokemon-card div {
-  color: #dbdbdb;
-  margin-top: -9px; /* Ajustez la valeur négative pour déplacer le texte vers le haut */
+  color: #000000;
+  margin-top: -9px;
   margin-bottom: 5px;
+}
+
+.pokemon-card:hover::before {
+  opacity: 1;
 }
 
 /* ARENE */
