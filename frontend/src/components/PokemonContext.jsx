@@ -6,6 +6,8 @@ export const PokemonContext = createContext();
 function PokemonProvider({ children }) {
   const [capturedPokemons, setCaptured] = useState({});
   const [team, setTeam] = useState([]);
+  const [allPokemons, setAllPokemons] = useState([]);
+  const [enemyTeam, setEnemyTeam] = useState([]);
 
   const addToTeam = (pokemonToAdd) => {
     setTeam((prevTeam) => {
@@ -13,7 +15,7 @@ function PokemonProvider({ children }) {
         prevTeam.length < 6 &&
         !prevTeam.some((p) => p.name === pokemonToAdd.name)
       ) {
-        return [...prevTeam, pokemonToAdd];
+        return [...prevTeam, { ...pokemonToAdd, currentHp: pokemonToAdd.hp }];
       }
       return prevTeam;
     });
@@ -21,7 +23,49 @@ function PokemonProvider({ children }) {
 
   const removeFromTeam = (pokemonToRemove) => {
     setTeam((prevTeam) =>
-      prevTeam.filter((p) => p.name !== pokemonToRemove.name)
+      prevTeam.filter((pokemon) => pokemon.name !== pokemonToRemove.name)
+    );
+  };
+
+  const addToEnemyTeam = (pokemonToAdd) => {
+    setEnemyTeam((prevTeam) => {
+      if (prevTeam.length < 6) {
+        return [...prevTeam, { ...pokemonToAdd, currentHp: pokemonToAdd.hp }];
+      }
+      return prevTeam;
+    });
+  };
+
+  function generateEnemyTeam() {
+    if (!allPokemons || allPokemons.length === 0) {
+      return;
+    }
+    const randomTeam = [];
+    while (randomTeam.length < 6) {
+      const randomIndex = Math.floor(Math.random() * allPokemons.length);
+      const randomPokemon = allPokemons[randomIndex];
+
+      if (!randomTeam.some((pokemon) => pokemon.name === randomPokemon.name)) {
+        addToEnemyTeam(randomPokemon);
+        randomTeam.push(randomPokemon);
+      }
+    }
+  }
+
+  const setPokemonHp = (pokemonName, newHp) => {
+    setTeam((prevTeam) =>
+      prevTeam.map((pokemon) =>
+        pokemon.name === pokemonName
+          ? { ...pokemon, currentHp: newHp }
+          : pokemon
+      )
+    );
+    setEnemyTeam((prevTeam) =>
+      prevTeam.map((pokemon) =>
+        pokemon.name === pokemonName
+          ? { ...pokemon, currentHp: newHp }
+          : pokemon
+      )
     );
   };
 
@@ -32,9 +76,16 @@ function PokemonProvider({ children }) {
       team,
       setTeam,
       addToTeam,
+      enemyTeam,
+      setEnemyTeam,
+      allPokemons,
+      setAllPokemons,
+      addToEnemyTeam,
+      generateEnemyTeam,
       removeFromTeam,
+      setPokemonHp,
     }),
-    [capturedPokemons, team]
+    [capturedPokemons, team, enemyTeam, allPokemons, setPokemonHp]
   );
 
   return (
