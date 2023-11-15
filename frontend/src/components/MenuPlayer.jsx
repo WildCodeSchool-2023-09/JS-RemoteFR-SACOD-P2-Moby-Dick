@@ -13,7 +13,11 @@ function MenuPlayer() {
             <img src={pokemon.imageUrl} alt={pokemon.name} />{" "}
             <span>
               {pokemon.name} <br />{" "}
-              <progress className="pokemonHpBar" value={40} max={pokemon.hp} />
+              <progress
+                className="pokemonHpBar"
+                value={pokemon.currentHp}
+                max={pokemon.hp}
+              />
             </span>
             <button
               className="buttonRemoveFromTeam"

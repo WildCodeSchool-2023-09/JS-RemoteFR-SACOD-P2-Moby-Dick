@@ -10,10 +10,10 @@
 /* NAVBAR */
 .logo {
   width: 5vw;
-  flex-shrink: 0;
+  flex-shrink: 0px;
   height: auto;
   margin: 2vh 0;
-  margin: 0;
+  margin: 0px;
 }
 
 .navBar {
@@ -461,6 +461,15 @@ main {
   box-shadow: 0 0 20px 10px #eedf21;
 }
 
+.pokemonPlayer {
+  position: absolute;
+  z-index: 20;
+  right: 60vw;
+  top: 58vh;
+  height: 40vh;
+  width: auto;
+}
+
 /* STARTER */
 
 .starter-container {
@@ -499,6 +508,7 @@ main {
   border: none;
   cursor: pointer;
 }
+
 .buttons-starter img {
   width: 12rem;
   opacity: 0;
@@ -512,8 +522,6 @@ main {
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(15px);
 }
-
-/* POKEDEX */
 
 /* POKEDEX */
 

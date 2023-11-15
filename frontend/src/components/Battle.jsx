@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { PokemonContext } from "./PokemonContext";
+
 import api from "../api";
 
 const images = [
@@ -38,32 +40,13 @@ const trainers = [
 function Battle() {
   const [selectedImage, setSelectedImage] = useState("backgroundsea");
   const [selectedTrainer, setSelectedTrainer] = useState(null);
-  const [pokemonImage, setPokemonImage] = useState(null);
+  const { randomPokemon } = useContext(PokemonContext);
 
   useEffect(() => {
-    const fetchPokemonData = async () => {
-      try {
-        const maxPokemon = 151;
-        const randomId = Math.floor(Math.random() * maxPokemon) + 1;
-        const response = await api.get(`/${randomId}`);
-        const pokemonImageUrl = response.data.sprites.front_default;
-        setPokemonImage(pokemonImageUrl);
-      } catch (error) {
-        console.error(
-          "Erreur lors de la récupération des données du Pokémon",
-          error
-        );
-      }
-    };
-
-    fetchPokemonData();
-  }, []);
-
-  useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * images.length);
-    const randomTrainer = Math.floor(Math.random() * trainers.length);
-    setSelectedImage(images[randomIndex]);
-    setSelectedTrainer(trainers[randomTrainer]);
+    const randomImageIndex = Math.floor(Math.random() * images.length);
+    const randomTrainerIndex = Math.floor(Math.random() * trainers.length);
+    setSelectedImage(images[randomImageIndex]);
+    setSelectedTrainer(trainers[randomTrainerIndex]);
   }, []);
 
   return (
@@ -71,11 +54,15 @@ function Battle() {
       {selectedTrainer && (
         <div>
           <img className="trainers" src={selectedTrainer} alt="Trainers" />
-          <img className="pokemonWild" src={pokemonImage} alt="Pokemon" />
+          {randomPokemon && (
+            <img
+              className="pokemonWild"
+              src={randomPokemon.imageUrl}
+              alt={randomPokemon.name}
+            />
+          )}
         </div>
       )}
-
-      {/* Ajoutez le bouton Link ici */}
       <Link to="/hub">
         <button type="button" className="battleButton" title="Fuir 🏃">
           <img src="fuir.png" alt="Hub" />
