@@ -10,7 +10,7 @@
 /* NAVBAR */
 .logo {
   width: 5vw;
-  flex-shrink: 0;
+  flex-shrink: 0px;
   height: auto;
   margin: 2vh 0;
   margin: 0;
