@@ -424,7 +424,7 @@ main {
   transition: opacity 0.3s;
 }
 
-.buttons-starter button:hover img {
+.buttons-starter :hover img {
   opacity: 1;
   box-shadow: 0 0 10px #f4f0f08d;
   border-radius: 50%;
