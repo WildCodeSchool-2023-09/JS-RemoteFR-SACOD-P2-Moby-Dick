@@ -24,9 +24,14 @@ function Starter() {
           data-description="TYPE EAU 💧"
           onClick={() =>
             handlePokemonSelect({
-              name: "Carapuce",
+              name: "squirtle",
               imageUrl:
                 "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+              imageUrlBack:
+                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/7.png",
+              attack: 100,
+              defense: 75,
+              hp: 70,
             })
           }
         >
@@ -39,9 +44,14 @@ function Starter() {
           data-description="TYPE PLANTE 🌿"
           onClick={() =>
             handlePokemonSelect({
-              name: "Bulbizarre",
+              name: "bulbasaur",
               imageUrl:
                 "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+              imageUrlBack:
+                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
+              attack: 100,
+              defense: 75,
+              hp: 70,
             })
           }
         >
@@ -54,9 +64,14 @@ function Starter() {
           data-description="TYPE FEU 🔥"
           onClick={() =>
             handlePokemonSelect({
-              name: "Salameche",
+              name: "charmander",
               imageUrl:
                 "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+              imageUrlBack:
+                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png",
+              attack: 100,
+              defense: 75,
+              hp: 70,
             })
           }
         >
