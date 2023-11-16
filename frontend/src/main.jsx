@@ -16,6 +16,7 @@ import Starter from "./components/Starter";
 import Pokeshop from "./components/Pokeshop";
 import Pokedex from "./components/Pokedex";
 import AboutUs from "./components/AboutUs";
+import NotFound from "./components/NotFound";
 import FightSystem from "./components/FightSystem";
 import CapturSystem from "./components/CapturSystem";
 import "./App.css";
@@ -153,6 +154,10 @@ const router = createBrowserRouter([
   {
     path: "/aboutus",
     element: <AboutUs />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
