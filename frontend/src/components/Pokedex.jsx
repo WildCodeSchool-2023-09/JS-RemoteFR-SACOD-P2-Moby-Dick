@@ -1,43 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
-import api from "../api";
 import { PokemonContext } from "./PokemonContext";
 
 function Pokemondex() {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { capturedPokemons, setCaptured, addToTeam, setAllPokemons } =
+  const { capturedPokemons, setCaptured, addToTeam, allPokemons } =
     useContext(PokemonContext);
 
   useEffect(() => {
     const getPokemons = async () => {
       try {
-        const response = await api.get("?limit=151");
-        const pokemonsData = response.data.results;
-
-        const pokemonsDetails = await Promise.all(
-          pokemonsData.map(async (pokemon) => {
-            const pokemonDetailsResponse = await api.get(pokemon.name);
-            return {
-              name: pokemon.name,
-              imageUrl: pokemonDetailsResponse.data.sprites?.front_default,
-              imageUrlBack: pokemonDetailsResponse.data.sprites?.back_default,
-              attack: pokemonDetailsResponse.data.stats.find(
-                (stat) => stat.stat.name === "attack"
-              )?.base_stat,
-              defense: pokemonDetailsResponse.data.stats.find(
-                (stat) => stat.stat.name === "defense"
-              )?.base_stat,
-              hp: pokemonDetailsResponse.data.stats.find(
-                (stat) => stat.stat.name === "hp"
-              )?.base_stat,
-              ...pokemonDetailsResponse.data,
-            };
-          })
-        );
         setCaptured(capturedPokemons);
-        setPokemons(pokemonsDetails);
-        setAllPokemons(pokemonsDetails);
+        setPokemons(allPokemons);
       } catch (error) {
         console.error(
           "Erreur lors de la récupération des données des Pokémon",
