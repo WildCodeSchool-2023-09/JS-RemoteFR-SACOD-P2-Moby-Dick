@@ -480,6 +480,14 @@ main {
   left: 30.4%;
 }
 
+.capturedText {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  top: 34%;
+  left: 75.6%;
+}
+
 /* BATTLE */
 
 .battle {
