@@ -412,6 +412,12 @@ main {
     box-shadow 0.5s;
 }
 
+.attackButton button {
+  background-color: transparent;
+  border-radius: 50%;
+  border: none;
+}
+
 .attackButton:hover {
   background: rgba(0, 0, 0, 0.9);
   box-shadow: 0 0 20px 10px #eedf21;
@@ -537,6 +543,7 @@ main {
   width: 70px;
   height: 70px;
   background: rgba(0, 0, 0, 0.1);
+  border: none;
   border-radius: 50%;
   display: flex;
   justify-content: center;
