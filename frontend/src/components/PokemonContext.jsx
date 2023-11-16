@@ -52,6 +52,22 @@ function PokemonProvider({ children }) {
     }
   }
 
+  function generateRandomWild() {
+    if (!allPokemons || allPokemons.length === 0) {
+      return;
+    }
+    const randomTeam = [];
+    while (randomTeam.length < 1) {
+      const randomIndex = Math.floor(Math.random() * allPokemons.length);
+      const randomPokemon = allPokemons[randomIndex];
+
+      if (!randomTeam.some((pokemon) => pokemon.name === randomPokemon.name)) {
+        addToEnemyTeam(randomPokemon);
+        randomTeam.push(randomPokemon);
+      }
+    }
+  }
+
   const setPokemonHp = (pokemonName, newHp) => {
     setTeam((prevTeam) =>
       prevTeam.map((pokemon) =>
@@ -84,8 +100,9 @@ function PokemonProvider({ children }) {
       generateEnemyTeam,
       removeFromTeam,
       setPokemonHp,
+      generateRandomWild,
     }),
-    [capturedPokemons, team, enemyTeam, allPokemons, setPokemonHp]
+    [capturedPokemons, team, enemyTeam, allPokemons, setPokemonHp, setCaptured]
   );
 
   return (

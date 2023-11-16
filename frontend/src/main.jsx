@@ -17,6 +17,7 @@ import Pokeshop from "./components/Pokeshop";
 import Pokedex from "./components/Pokedex";
 import AboutUs from "./components/AboutUs";
 import FightSystem from "./components/FightSystem";
+import CapturSystem from "./components/CapturSystem";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -72,6 +73,7 @@ const router = createBrowserRouter([
         <main>
           <MenuPlayer />
           <BattleWild />
+          <CapturSystem />
         </main>
         <Footer />
       </>

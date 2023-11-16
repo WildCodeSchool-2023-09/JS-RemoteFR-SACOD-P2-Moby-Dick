@@ -36,17 +36,7 @@ function Pokemondex() {
           })
         );
 
-        const capturedStatus = pokemonsDetails.reduce(
-          (statusAccumulator, pokemon) => {
-            return {
-              ...statusAccumulator,
-              [pokemon.name]: true,
-            };
-          },
-          {}
-        );
-
-        setCaptured(capturedStatus);
+        setCaptured(capturedPokemons);
         setPokemons(pokemonsDetails);
         setAllPokemons(pokemonsDetails);
       } catch (error) {
