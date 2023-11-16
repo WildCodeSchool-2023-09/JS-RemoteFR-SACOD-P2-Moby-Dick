@@ -617,11 +617,11 @@ main {
   width: 100%;
 }
 
-.choix-pokemon {
+.pokechoice {
   position: absolute;
   z-index: 20;
-  font-size: 4vh;
-  left: 26%;
+  font-size: 5vh;
+  left: 30%;
   top: 22%;
   background-color: #f9f9f9;
   border-radius: 10px;
@@ -636,9 +636,9 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
-  margin-left: 21.85%;
-  margin-top: 2.7%;
+  gap: 10rem;
+  margin-left: 22.2%;
+  margin-top: 5.3%;
 }
 
 .buttons-starter button {
@@ -648,12 +648,12 @@ main {
 }
 
 .buttons-starter img {
-  width: 12rem;
+  width: 21rem;
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-.buttons-starter button:hover img {
+.buttons-starter :hover img {
   opacity: 1;
   box-shadow: 0 0 10px #f4f0f08d;
   border-radius: 50%;
