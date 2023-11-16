@@ -14,13 +14,13 @@ function Hub() {
         >
           <img src="pokecenter-icon.png" alt="Pokecenter" width={32} />
         </Link>
-        <button
-          type="button"
+        <Link
+          to="/pokeshop"
           className="image-button"
           data-description="Pokéshop 🛍️"
         >
           <img src="pokeshop-icon.png" alt="Pokeshop" width={32} />
-        </button>
+        </Link>
         <Link
           to="/battle"
           className="image-button"

@@ -5,7 +5,8 @@ import { PokemonContext } from "./PokemonContext";
 function Pokemondex() {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { capturedPokemons, setCaptured, addToTeam } =
+
+  const { capturedPokemons, setCaptured, addToTeam, setAllPokemons } =
     useContext(PokemonContext);
 
   useEffect(() => {
@@ -20,6 +21,7 @@ function Pokemondex() {
             return {
               name: pokemon.name,
               imageUrl: pokemonDetailsResponse.data.sprites?.front_default,
+              imageUrlBack: pokemonDetailsResponse.data.sprites?.back_default,
               attack: pokemonDetailsResponse.data.stats.find(
                 (stat) => stat.stat.name === "attack"
               )?.base_stat,
@@ -33,19 +35,9 @@ function Pokemondex() {
             };
           })
         );
-
-        const capturedStatus = pokemonsDetails.reduce(
-          (statusAccumulator, pokemon) => {
-            return {
-              ...statusAccumulator,
-              [pokemon.name]: true,
-            };
-          },
-          {}
-        );
-
-        setCaptured(capturedStatus);
+        setCaptured(capturedPokemons);
         setPokemons(pokemonsDetails);
+        setAllPokemons(pokemonsDetails);
       } catch (error) {
         console.error(
           "Erreur lors de la récupération des données des Pokémon",
@@ -62,7 +54,7 @@ function Pokemondex() {
 
   return (
     <div className="pokemondex">
-      <ul>
+      <ul className="pokemondexul">
         {pokemons.map((pokemon) => {
           const isCaptured = capturedPokemons[pokemon.name];
           return (
@@ -80,8 +72,13 @@ function Pokemondex() {
                 </>
               ) : (
                 <>
-                  <div className="unknown-pokemon">???</div>
-                  <div>???</div>
+                  <div
+                    className="unknown-pokemon"
+                    style={{ marginTop: "60px" }}
+                  >
+                    <img src="/zarbi.png" alt="unknown" />
+                  </div>{" "}
+                  <div className="unknown-text"> </div>
                 </>
               )}
             </li>

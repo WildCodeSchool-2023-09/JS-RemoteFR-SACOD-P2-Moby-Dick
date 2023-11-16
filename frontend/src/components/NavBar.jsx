@@ -16,13 +16,15 @@ function NavBar() {
             <img src="home-icon.png" alt="Hub" />
           </button>
         </Link>
-        <button
-          type="button"
-          className="navButton"
-          data-description="Compte ✌️"
-        >
-          <img src="compte.png" alt="Hub" />
-        </button>
+        <Link to="/error">
+          <button
+            type="button"
+            className="navButton"
+            data-description="Compte ✌️"
+          >
+            <img src="compte.png" alt="Hub" />
+          </button>
+        </Link>
         <button
           type="button"
           className="navButton"
