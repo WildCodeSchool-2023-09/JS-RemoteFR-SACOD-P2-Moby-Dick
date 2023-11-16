@@ -459,8 +459,8 @@ main {
 .pokechoice {
   position: absolute;
   z-index: 20;
-  font-size: 4vh;
-  left: 26%;
+  font-size: 5vh;
+  left: 30%;
   top: 22%;
   background-color: #f9f9f9;
   border-radius: 10px;
