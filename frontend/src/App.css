@@ -191,6 +191,7 @@ main {
   border: 7px double #ffffff;
   height: 88.6vh;
   overflow: auto;
+  width: 17vw;
 }
 .menu-container {
   display: flex;
@@ -327,6 +328,11 @@ main {
   border: 3px solid black;
   color: white;
   cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.healPokemonButton:hover {
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* POKESHOP */
@@ -387,6 +393,90 @@ main {
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* MENU BATTLE LOG */
+
+.attackButton {
+  position: absolute;
+  top: 50%;
+  left: 16.7%;
+  width: 75px;
+  height: 75px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.5s;
+}
+
+.attackButton:hover {
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 20px 10px #eedf21;
+}
+
+.battleLog {
+  background-image: url("/dialogue.png");
+  background-size: cover;
+  position: fixed;
+  bottom: 3rem;
+  right: 6rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  z-index: 1000;
+  overflow: auto;
+  width: 40rem;
+  max-height: 8rem;
+}
+
+.battleLog p {
+  margin-bottom: 0.3rem;
+  margin-left: 1rem;
+}
+
+.battleLog h4 {
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progressContainerEnemy {
+  position: absolute;
+  top: 14.2rem;
+  left: 75rem;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.nameEnemy {
+  position: absolute;
+  top: 13rem;
+  left: 73rem;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.progressContainerPlayer {
+  position: absolute;
+  top: 26.2rem;
+  left: 29rem;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.namePlayer {
+  position: absolute;
+  top: 25rem;
+  left: 27rem;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 /* BATTLE */
 
 .battle {
@@ -442,7 +532,7 @@ main {
 .battleButton {
   position: absolute;
   top: 14%;
-  left: 12%;
+  left: 18.7%;
   transform: translate(-50%, -50%);
   width: 70px;
   height: 70px;
@@ -587,7 +677,8 @@ main {
 
 .pokemon-card {
   position: relative;
-  width: 18.45%;
+  width: 14rem;
+  height: 14rem;
   margin: 10px;
   padding: 5px;
   border: thick double #fcfcd5;
@@ -623,7 +714,6 @@ main {
   color: #ffffff;
   padding: 4px 4px;
   cursor: pointer;
-  border: none;
   margin-top: 20px;
   border: solid #000000;
   top: 1%;
@@ -640,8 +730,8 @@ main {
   margin-bottom: 5px;
 }
 
-.pokemon-card:hover::before {
-  opacity: 1;
+.unknown-pokemon {
+  margin-top: 20px;
 }
 
 /* ARENE */
