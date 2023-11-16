@@ -621,7 +621,7 @@ main {
   position: absolute;
   z-index: 20;
   font-size: 5vh;
-  left: 30%;
+  left: 34.5%;
   top: 22%;
   background-color: #f9f9f9;
   border-radius: 10px;
@@ -636,9 +636,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10rem;
-  margin-left: 22.2%;
-  margin-top: 5.3%;
+  gap: 8.9rem;
+  margin-left: 22.1%;
 }
 
 .buttons-starter button {
@@ -648,7 +647,7 @@ main {
 }
 
 .buttons-starter img {
-  width: 21rem;
+  width: 19rem;
   opacity: 0;
   transition: opacity 0.3s;
 }
