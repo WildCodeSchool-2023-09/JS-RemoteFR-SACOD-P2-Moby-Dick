@@ -6,6 +6,8 @@ function FightSystem() {
     useContext(PokemonContext);
   const [battleLog, setBattleLog] = useState([]);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [isPlayerAttacking, setIsPlayerAttacking] = useState(false);
+  const [isEnemyAttacking, setIsEnemyAttacking] = useState(false);
 
   const [currentPlayerPokemonIndex, setCurrentPlayerPokemonIndex] = useState(0);
   const [currentEnemyPokemonIndex, setCurrentEnemyPokemonIndex] = useState(0);
@@ -67,6 +69,14 @@ function FightSystem() {
       `${currentEnemyPokemon.name} inflige ${damageToPlayer} dégâts à ${currentPlayerPokemon.name}`,
     ]);
 
+    setIsPlayerAttacking(true);
+    setIsEnemyAttacking(true);
+
+    setTimeout(() => {
+      setIsPlayerAttacking(false);
+      setIsEnemyAttacking(false);
+    }, 300);
+
     if (newPlayerHp <= 0) {
       handleNextPokemon(
         currentPlayerPokemonIndex,
@@ -96,7 +106,9 @@ function FightSystem() {
           {currentPlayerPokemon && (
             <>
               <img
-                className="pokemonPlayer"
+                className={`pokemonPlayer ${
+                  isPlayerAttacking ? "animate-attack-right" : ""
+                }`}
                 src={currentPlayerPokemon.imageUrlBack}
                 alt="Pokemon player"
               />
@@ -114,7 +126,9 @@ function FightSystem() {
           <div className="enemyPokemon">
             <h3>{currentEnemyPokemon.name}</h3>
             <img
-              className="pokemonWild"
+              className={`pokemonWild ${
+                isEnemyAttacking ? "animate-attack-left" : ""
+              }`}
               src={currentEnemyPokemon.imageUrl}
               alt="Pokemon enemy"
             />
