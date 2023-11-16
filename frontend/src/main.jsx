@@ -15,6 +15,7 @@ import BattleArene from "./components/BattleArene";
 import Pokeshop from "./components/Pokeshop";
 import Pokedex from "./components/Pokedex";
 import AboutUs from "./components/AboutUs";
+import NotFound from "./components/NotFound";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -132,6 +133,10 @@ const router = createBrowserRouter([
   {
     path: "/aboutus",
     element: <AboutUs />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
