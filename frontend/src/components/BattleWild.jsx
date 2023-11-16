@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import api from "../api";
 
 const images = [
   "backgroundbeach",
@@ -10,35 +9,16 @@ const images = [
   "backgroundgrass",
 ];
 
-function BattleWild() {
+function Battle() {
   const [selectedImage, setSelectedImage] = useState("backgroundsea");
-  const [pokemonImage, setPokemonImage] = useState(null);
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * images.length);
-    setSelectedImage(images[randomIndex]);
-
-    const fetchPokemonData = async () => {
-      try {
-        const maxPokemon = 151;
-        const randomId = Math.floor(Math.random() * maxPokemon) + 1;
-        const response = await api.get(`/${randomId}`);
-        const pokemonImageUrl = response.data.sprites.front_default;
-        setPokemonImage(pokemonImageUrl);
-      } catch (error) {
-        console.error(
-          "Erreur lors de la récupération des données du Pokémon",
-          error
-        );
-      }
-    };
-
-    fetchPokemonData();
+    const randomImageIndex = Math.floor(Math.random() * images.length);
+    setSelectedImage(images[randomImageIndex]);
   }, []);
 
   return (
     <div className={`battle ${selectedImage}`}>
-      <img className="pokemonWild" src={pokemonImage} alt="Pokemon" />
       <Link to="/hub">
         <button type="button" className="battleButton" title="Fuir 🏃">
           <img src="fuir.png" alt="Hub" />
@@ -48,4 +28,4 @@ function BattleWild() {
   );
 }
 
-export default BattleWild;
+export default Battle;
