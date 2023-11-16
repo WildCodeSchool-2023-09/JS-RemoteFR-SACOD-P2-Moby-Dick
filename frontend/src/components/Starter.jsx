@@ -1,12 +1,25 @@
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
 import { PokemonContext } from "./PokemonContext";
 
 function Starter() {
-  const { addToTeam } = useContext(PokemonContext);
+  const { addToTeam, capturedPokemons, setCaptured } =
+    useContext(PokemonContext);
 
-  const handleAddToTeam = (pokemon) => {
-    addToTeam(pokemon);
+  const handleAddToTeam = (pokemonName, imageUrl) => {
+    const pokemonToAdd = {
+      name: pokemonName,
+      imageUrl,
+    };
+
+    if (!capturedPokemons[pokemonName]) {
+      setCaptured((prevCaptured) => ({
+        ...prevCaptured,
+        [pokemonName]: true,
+      }));
+
+      addToTeam(pokemonToAdd);
+    }
   };
 
   return (
@@ -14,29 +27,29 @@ function Starter() {
       <p className="pokechoice">Chaque aventure débute par un choix</p>
       <div className="buttons-starter">
         <Link
-          onClick={() => handleAddToTeam({ name: "Carapuce" })}
           to="/hub"
           type="button"
           className=".starter-image"
           data-description="TYPE EAU 💧"
+          onClick={() => handleAddToTeam("Carapuce", "carapuce.png")}
         >
           <img src="carapuce.png" alt="Carapuce" />
         </Link>
         <Link
-          onClick={() => handleAddToTeam({ name: "Bulbizarre" })}
           to="/hub"
           type="button"
           className=".starter-image"
           data-description="TYPE PLANTE 🌿"
+          onClick={() => handleAddToTeam("Bulbizarre", "bulbizarre.png")}
         >
           <img src="bulbizarre.png" alt="bulbasaur" />
         </Link>
         <Link
-          onClick={() => handleAddToTeam({ name: "Salameche" })}
           to="/hub"
           type="button"
           className=".starter-image"
           data-description="TYPE FEU 🔥"
+          onClick={() => handleAddToTeam("Salameche", "salameche.png")}
         >
           <img src="salameche.png" alt="Salameche" />
         </Link>
@@ -44,5 +57,4 @@ function Starter() {
     </div>
   );
 }
-
 export default Starter;
