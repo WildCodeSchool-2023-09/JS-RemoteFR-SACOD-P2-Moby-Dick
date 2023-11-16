@@ -98,6 +98,7 @@ const router = createBrowserRouter([
         <main>
           <MenuPlayer />
           <BattleArene />
+          <FightSystem />
         </main>
         <Footer />
       </>
