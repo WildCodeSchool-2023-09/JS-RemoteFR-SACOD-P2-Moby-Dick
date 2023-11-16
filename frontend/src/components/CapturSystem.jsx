@@ -1,16 +1,21 @@
 import React, { useContext, useState, useEffect } from "react";
 import { PokemonContext } from "./PokemonContext";
 
-function FightSystem() {
-  const { team, enemyTeam, generateEnemyTeam, setPokemonHp } =
-    useContext(PokemonContext);
+function CaptureSystem() {
+  const {
+    team,
+    enemyTeam,
+    generateRandomWild,
+    setPokemonHp,
+    capturedPokemons,
+    setCaptured,
+  } = useContext(PokemonContext);
   const [battleLog, setBattleLog] = useState([]);
   const [isGameOver, setIsGameOver] = useState(false);
   const [isPlayerAttacking, setIsPlayerAttacking] = useState(false);
   const [isEnemyAttacking, setIsEnemyAttacking] = useState(false);
 
   const [currentPlayerPokemonIndex, setCurrentPlayerPokemonIndex] = useState(0);
-  const [currentEnemyPokemonIndex, setCurrentEnemyPokemonIndex] = useState(0);
 
   function calculateDamage(attacker, defender) {
     const damageMultiplier = Math.random() * 0.6 + 1.2;
@@ -21,11 +26,11 @@ function FightSystem() {
   }
 
   useEffect(() => {
-    generateEnemyTeam();
+    generateRandomWild();
   }, []);
 
   const currentPlayerPokemon = team[currentPlayerPokemonIndex];
-  const currentEnemyPokemon = enemyTeam[currentEnemyPokemonIndex];
+  const currentEnemyPokemon = enemyTeam[0];
 
   const handleNextPokemon = (currentIndex, setCurrentIndex) => {
     const nextIndex = currentIndex + 1;
@@ -48,7 +53,7 @@ function FightSystem() {
       currentEnemyPokemon
     );
     const newEnemyHp = Math.max(
-      0,
+      1,
       currentEnemyPokemon.currentHp - damageToEnemy
     );
     setPokemonHp(currentEnemyPokemon.name, newEnemyHp);
@@ -84,15 +89,23 @@ function FightSystem() {
       );
     }
 
-    if (newEnemyHp <= 0) {
-      const nextEnemyIndex = currentEnemyPokemonIndex + 1;
-      if (nextEnemyIndex < enemyTeam.length) {
-        setCurrentEnemyPokemonIndex(nextEnemyIndex);
-      } else {
-        setIsGameOver(true);
+    if (newEnemyHp <= 1) {
+      setIsGameOver(true);
+      if (newPlayerHp <= 0) {
+        handleNextPokemon(
+          currentPlayerPokemonIndex,
+          setCurrentPlayerPokemonIndex
+        );
+      }
+
+      if (newEnemyHp <= 1) {
+        setCaptured((prevCaptured) => ({
+          ...prevCaptured,
+          [currentEnemyPokemon.name]: true,
+        }));
         setBattleLog((prevLog) => [
           ...prevLog,
-          "Vous avez vaincu tous les Pokémon adverses ! Vous avez gagné !",
+          `Vous avez affaibli ${currentEnemyPokemon.name} ! Il est capturé et ajouté à votre Pokédex.`,
         ]);
       }
     }
@@ -102,9 +115,7 @@ function FightSystem() {
     <div className="fightSystem">
       <div className="combatInfo">
         <div className="playerPokemon">
-          <div className="namePlayer">
-            <h3>{currentPlayerPokemon ? currentPlayerPokemon.name : ""}</h3>
-          </div>{" "}
+          <h3>{currentPlayerPokemon ? currentPlayerPokemon.name : ""}</h3>
           {currentPlayerPokemon && (
             <>
               <img
@@ -114,23 +125,23 @@ function FightSystem() {
                 src={currentPlayerPokemon.imageUrlBack}
                 alt="Pokemon player"
               />
-              <div className="progressContainerPlayer">
-                <progress
-                  max={currentPlayerPokemon.hp}
-                  value={currentPlayerPokemon.currentHp}
-                />
-                <span>
-                  HP: {currentPlayerPokemon.currentHp}/{currentPlayerPokemon.hp}
-                </span>
-              </div>
+              <progress
+                max={currentPlayerPokemon.hp}
+                value={currentPlayerPokemon.currentHp}
+              />
+              <span>
+                HP: {currentPlayerPokemon.currentHp}/{currentPlayerPokemon.hp}
+              </span>
             </>
           )}
         </div>
         {currentEnemyPokemon && (
-          <div className="enemyPokemon">
-            <div className="nameEnemy">
-              <h3>{currentEnemyPokemon.name}</h3>
-            </div>{" "}
+          <div
+            className={`enemyPokemon ${
+              capturedPokemons[currentEnemyPokemon.name] ? "captured" : ""
+            }`}
+          >
+            <h3>{currentEnemyPokemon.name}</h3>
             <img
               className={`pokemonWild ${
                 isEnemyAttacking ? "animate-attack-left" : ""
@@ -138,21 +149,22 @@ function FightSystem() {
               src={currentEnemyPokemon.imageUrl}
               alt="Pokemon enemy"
             />
-            <div className="progressContainerEnemy">
-              <progress
-                max={currentEnemyPokemon.hp}
-                value={currentEnemyPokemon.currentHp}
-              />
-              <span>
-                HP: {currentEnemyPokemon.currentHp} / {currentEnemyPokemon.hp}
-              </span>
-            </div>
+            {capturedPokemons[currentEnemyPokemon.name] && (
+              <span>Capturé!</span>
+            )}
+            <progress
+              max={currentEnemyPokemon.hp}
+              value={currentEnemyPokemon.currentHp}
+            />
+            <span>
+              HP: {currentEnemyPokemon.currentHp} / {currentEnemyPokemon.hp}
+            </span>
           </div>
         )}
       </div>
       <div className="attackButton">
         <button type="button" onClick={handleAttack}>
-          <img src="/katana2.png" alt="Attaquer" />
+          Attaquer
         </button>
       </div>
       <div className="battleLog">
@@ -165,4 +177,4 @@ function FightSystem() {
   );
 }
 
-export default FightSystem;
+export default CaptureSystem;
