@@ -83,8 +83,13 @@ function Pokemondex() {
                 </>
               ) : (
                 <>
-                  <div className="unknown-pokemon">???</div>
-                  <div>???</div>
+                  <div
+                    className="unknown-pokemon"
+                    style={{ marginTop: "60px" }}
+                  >
+                    <img src="/zarbi.png" alt="unknown" />
+                  </div>{" "}
+                  <div className="unknown-text"> </div>
                 </>
               )}
             </li>

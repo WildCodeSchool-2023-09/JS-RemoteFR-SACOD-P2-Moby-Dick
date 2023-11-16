@@ -102,7 +102,9 @@ function FightSystem() {
     <div className="fightSystem">
       <div className="combatInfo">
         <div className="playerPokemon">
-          <h3>{currentPlayerPokemon ? currentPlayerPokemon.name : ""}</h3>
+          <div className="namePlayer">
+            <h3>{currentPlayerPokemon ? currentPlayerPokemon.name : ""}</h3>
+          </div>{" "}
           {currentPlayerPokemon && (
             <>
               <img
@@ -112,19 +114,23 @@ function FightSystem() {
                 src={currentPlayerPokemon.imageUrlBack}
                 alt="Pokemon player"
               />
-              <progress
-                max={currentPlayerPokemon.hp}
-                value={currentPlayerPokemon.currentHp}
-              />
-              <span>
-                HP: {currentPlayerPokemon.currentHp}/{currentPlayerPokemon.hp}
-              </span>
+              <div className="progressContainerPlayer">
+                <progress
+                  max={currentPlayerPokemon.hp}
+                  value={currentPlayerPokemon.currentHp}
+                />
+                <span>
+                  HP: {currentPlayerPokemon.currentHp}/{currentPlayerPokemon.hp}
+                </span>
+              </div>
             </>
           )}
         </div>
         {currentEnemyPokemon && (
           <div className="enemyPokemon">
-            <h3>{currentEnemyPokemon.name}</h3>
+            <div className="nameEnemy">
+              <h3>{currentEnemyPokemon.name}</h3>
+            </div>{" "}
             <img
               className={`pokemonWild ${
                 isEnemyAttacking ? "animate-attack-left" : ""
@@ -132,19 +138,21 @@ function FightSystem() {
               src={currentEnemyPokemon.imageUrl}
               alt="Pokemon enemy"
             />
-            <progress
-              max={currentEnemyPokemon.hp}
-              value={currentEnemyPokemon.currentHp}
-            />
-            <span>
-              HP: {currentEnemyPokemon.currentHp} / {currentEnemyPokemon.hp}
-            </span>
+            <div className="progressContainerEnemy">
+              <progress
+                max={currentEnemyPokemon.hp}
+                value={currentEnemyPokemon.currentHp}
+              />
+              <span>
+                HP: {currentEnemyPokemon.currentHp} / {currentEnemyPokemon.hp}
+              </span>
+            </div>
           </div>
         )}
       </div>
       <div className="attackButton">
         <button type="button" onClick={handleAttack}>
-          Attaquer
+          <img src="/katana2.png" alt="Attaquer" />
         </button>
       </div>
       <div className="battleLog">
