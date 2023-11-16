@@ -12,16 +12,32 @@ import BattleWild from "./components/BattleWild";
 import PokeCenter from "./components/PokeCenter";
 import Arene from "./components/Arene";
 import BattleArene from "./components/BattleArene";
+import Starter from "./components/Starter";
 import Pokeshop from "./components/Pokeshop";
 import Pokedex from "./components/Pokedex";
 import AboutUs from "./components/AboutUs";
 import NotFound from "./components/NotFound";
+import FightSystem from "./components/FightSystem";
+import CapturSystem from "./components/CapturSystem";
 import "./App.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/starter",
+    element: (
+      <>
+        <NavBar />
+        <main>
+          <MenuPlayer />
+          <Starter />
+        </main>
+        <Footer />
+      </>
+    ),
   },
   {
     path: "/hub",
@@ -44,6 +60,7 @@ const router = createBrowserRouter([
         <main>
           <MenuPlayer />
           <Battle />
+          <FightSystem />
         </main>
         <Footer />
       </>
@@ -57,6 +74,7 @@ const router = createBrowserRouter([
         <main>
           <MenuPlayer />
           <BattleWild />
+          <CapturSystem />
         </main>
         <Footer />
       </>
