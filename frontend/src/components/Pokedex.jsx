@@ -35,7 +35,7 @@ function Pokemondex() {
             };
           })
         );
-        setCaptured(capturedPokemons)
+        setCaptured(capturedPokemons);
         setPokemons(pokemonsDetails);
         setAllPokemons(pokemonsDetails);
       } catch (error) {
