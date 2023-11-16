@@ -1,4 +1,10 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, {
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+  useLayoutEffect,
+} from "react";
 import { PokemonContext } from "./PokemonContext";
 
 function FightSystem() {
@@ -11,6 +17,18 @@ function FightSystem() {
 
   const [currentPlayerPokemonIndex, setCurrentPlayerPokemonIndex] = useState(0);
   const [currentEnemyPokemonIndex, setCurrentEnemyPokemonIndex] = useState(0);
+
+  const battleLogRef = useRef(null);
+
+  const scrollToBottom = () => {
+    if (battleLogRef.current) {
+      battleLogRef.current.scrollTop = battleLogRef.current.scrollHeight;
+    }
+  };
+
+  useLayoutEffect(() => {
+    scrollToBottom();
+  }, [battleLog]);
 
   function calculateDamage(attacker, defender) {
     const damageMultiplier = Math.random() * 0.6 + 1.2;
@@ -155,7 +173,7 @@ function FightSystem() {
           <img src="/katana2.png" alt="Attaquer" />
         </button>
       </div>
-      <div className="battleLog">
+      <div className="battleLog" ref={battleLogRef}>
         <h4>Journal de combat</h4>
         {battleLog.map((log) => (
           <p>{log}</p>
