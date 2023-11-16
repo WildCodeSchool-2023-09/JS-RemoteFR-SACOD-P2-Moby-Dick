@@ -398,7 +398,7 @@ main {
 .attackButton {
   position: absolute;
   top: 50%;
-  left: 16.7%;
+  left: 16.5%;
   width: 75px;
   height: 75px;
   background-color: rgba(0, 0, 0, 0.1);
@@ -410,6 +410,12 @@ main {
   transition:
     background-color 0.2s,
     box-shadow 0.5s;
+}
+
+.attackButton button {
+  background-color: transparent;
+  border-radius: 50%;
+  border: none;
 }
 
 .attackButton:hover {
@@ -445,36 +451,33 @@ main {
   align-items: center;
 }
 
-.progressContainerEnemy {
+.progressContainerEnemy,
+.nameEnemy,
+.progressContainerPlayer,
+.namePlayer {
   position: absolute;
-  top: 14.2rem;
-  left: 75rem;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.progressContainerEnemy {
+  top: 40%;
+  left: 78%;
 }
 
 .nameEnemy {
-  position: absolute;
-  top: 13rem;
-  left: 73rem;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  top: 37%;
+  left: 75.6%;
 }
 
 .progressContainerPlayer {
-  position: absolute;
-  top: 26.2rem;
-  left: 29rem;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  top: 54%;
+  left: 32%;
 }
 
 .namePlayer {
-  position: absolute;
-  top: 25rem;
-  left: 27rem;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  top: 50%;
+  left: 30.4%;
 }
 
 /* BATTLE */
@@ -537,6 +540,7 @@ main {
   width: 70px;
   height: 70px;
   background: rgba(0, 0, 0, 0.1);
+  border: none;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -679,7 +683,7 @@ main {
   position: relative;
   width: 14rem;
   height: 14rem;
-  margin: 10px;
+  margin: 20px;
   padding: 5px;
   border: thick double #fcfcd5;
   text-align: center;
