@@ -40,32 +40,31 @@ function PokemonProvider({ children }) {
     if (!allPokemons || allPokemons.length === 0) {
       return;
     }
+
+    setEnemyTeam([]);
+
     const randomTeam = [];
     while (randomTeam.length < 6) {
       const randomIndex = Math.floor(Math.random() * allPokemons.length);
       const randomPokemon = allPokemons[randomIndex];
 
       if (!randomTeam.some((pokemon) => pokemon.name === randomPokemon.name)) {
-        addToEnemyTeam(randomPokemon);
-        randomTeam.push(randomPokemon);
+        randomTeam.push({ ...randomPokemon, currentHp: randomPokemon.hp });
       }
     }
+
+    setEnemyTeam(randomTeam);
   }
 
   function generateRandomWild() {
     if (!allPokemons || allPokemons.length === 0) {
       return;
     }
-    const randomTeam = [];
-    while (randomTeam.length < 1) {
-      const randomIndex = Math.floor(Math.random() * allPokemons.length);
-      const randomPokemon = allPokemons[randomIndex];
 
-      if (!randomTeam.some((pokemon) => pokemon.name === randomPokemon.name)) {
-        addToEnemyTeam(randomPokemon);
-        randomTeam.push(randomPokemon);
-      }
-    }
+    const randomIndex = Math.floor(Math.random() * allPokemons.length);
+    const randomPokemon = allPokemons[randomIndex];
+
+    setEnemyTeam([{ ...randomPokemon, currentHp: randomPokemon.hp }]);
   }
 
   const setPokemonHp = (pokemonName, newHp) => {

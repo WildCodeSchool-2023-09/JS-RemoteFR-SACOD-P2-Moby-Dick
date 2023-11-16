@@ -5,7 +5,7 @@ function CaptureSystem() {
   const {
     team,
     enemyTeam,
-    generateEnemyTeam,
+    generateRandomWild,
     setPokemonHp,
     capturedPokemons,
     setCaptured,
@@ -26,8 +26,8 @@ function CaptureSystem() {
   }
 
   useEffect(() => {
-    generateEnemyTeam();
-  }, [generateEnemyTeam]);
+    generateRandomWild();
+  }, []);
 
   const currentPlayerPokemon = team[currentPlayerPokemonIndex];
   const currentEnemyPokemon = enemyTeam[0];

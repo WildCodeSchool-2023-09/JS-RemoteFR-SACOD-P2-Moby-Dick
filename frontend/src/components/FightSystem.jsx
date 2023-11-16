@@ -22,7 +22,7 @@ function FightSystem() {
 
   useEffect(() => {
     generateEnemyTeam();
-  }, [generateEnemyTeam]);
+  }, []);
 
   const currentPlayerPokemon = team[currentPlayerPokemonIndex];
   const currentEnemyPokemon = enemyTeam[currentEnemyPokemonIndex];
