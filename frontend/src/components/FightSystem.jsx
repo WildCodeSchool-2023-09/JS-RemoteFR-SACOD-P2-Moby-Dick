@@ -1,4 +1,10 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, {
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+  useLayoutEffect,
+} from "react";
 import { PokemonContext } from "./PokemonContext";
 
 function FightSystem() {
@@ -6,9 +12,23 @@ function FightSystem() {
     useContext(PokemonContext);
   const [battleLog, setBattleLog] = useState([]);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [isPlayerAttacking, setIsPlayerAttacking] = useState(false);
+  const [isEnemyAttacking, setIsEnemyAttacking] = useState(false);
 
   const [currentPlayerPokemonIndex, setCurrentPlayerPokemonIndex] = useState(0);
   const [currentEnemyPokemonIndex, setCurrentEnemyPokemonIndex] = useState(0);
+
+  const battleLogRef = useRef(null);
+
+  const scrollToBottom = () => {
+    if (battleLogRef.current) {
+      battleLogRef.current.scrollTop = battleLogRef.current.scrollHeight;
+    }
+  };
+
+  useLayoutEffect(() => {
+    scrollToBottom();
+  }, [battleLog]);
 
   function calculateDamage(attacker, defender) {
     const damageMultiplier = Math.random() * 0.6 + 1.2;
@@ -20,7 +40,7 @@ function FightSystem() {
 
   useEffect(() => {
     generateEnemyTeam();
-  }, [generateEnemyTeam]);
+  }, []);
 
   const currentPlayerPokemon = team[currentPlayerPokemonIndex];
   const currentEnemyPokemon = enemyTeam[currentEnemyPokemonIndex];
@@ -67,6 +87,14 @@ function FightSystem() {
       `${currentEnemyPokemon.name} inflige ${damageToPlayer} dégâts à ${currentPlayerPokemon.name}`,
     ]);
 
+    setIsPlayerAttacking(true);
+    setIsEnemyAttacking(true);
+
+    setTimeout(() => {
+      setIsPlayerAttacking(false);
+      setIsEnemyAttacking(false);
+    }, 300);
+
     if (newPlayerHp <= 0) {
       handleNextPokemon(
         currentPlayerPokemonIndex,
@@ -92,48 +120,60 @@ function FightSystem() {
     <div className="fightSystem">
       <div className="combatInfo">
         <div className="playerPokemon">
-          <h3>{currentPlayerPokemon ? currentPlayerPokemon.name : ""}</h3>
+          <div className="namePlayer">
+            <h3>{currentPlayerPokemon ? currentPlayerPokemon.name : ""}</h3>
+          </div>{" "}
           {currentPlayerPokemon && (
             <>
               <img
-                className="pokemonPlayer"
+                className={`pokemonPlayer ${
+                  isPlayerAttacking ? "animate-attack-right" : ""
+                }`}
                 src={currentPlayerPokemon.imageUrlBack}
                 alt="Pokemon player"
               />
-              <progress
-                max={currentPlayerPokemon.hp}
-                value={currentPlayerPokemon.currentHp}
-              />
-              <span>
-                HP: {currentPlayerPokemon.currentHp}/{currentPlayerPokemon.hp}
-              </span>
+              <div className="progressContainerPlayer">
+                <progress
+                  max={currentPlayerPokemon.hp}
+                  value={currentPlayerPokemon.currentHp}
+                />
+                <span>
+                  HP: {currentPlayerPokemon.currentHp}/{currentPlayerPokemon.hp}
+                </span>
+              </div>
             </>
           )}
         </div>
         {currentEnemyPokemon && (
           <div className="enemyPokemon">
-            <h3>{currentEnemyPokemon.name}</h3>
+            <div className="nameEnemy">
+              <h3>{currentEnemyPokemon.name}</h3>
+            </div>{" "}
             <img
-              className="pokemonWild"
+              className={`pokemonWild ${
+                isEnemyAttacking ? "animate-attack-left" : ""
+              }`}
               src={currentEnemyPokemon.imageUrl}
               alt="Pokemon enemy"
             />
-            <progress
-              max={currentEnemyPokemon.hp}
-              value={currentEnemyPokemon.currentHp}
-            />
-            <span>
-              HP: {currentEnemyPokemon.currentHp} / {currentEnemyPokemon.hp}
-            </span>
+            <div className="progressContainerEnemy">
+              <progress
+                max={currentEnemyPokemon.hp}
+                value={currentEnemyPokemon.currentHp}
+              />
+              <span>
+                HP: {currentEnemyPokemon.currentHp} / {currentEnemyPokemon.hp}
+              </span>
+            </div>
           </div>
         )}
       </div>
       <div className="attackButton">
-        <button type="button" onClick={handleAttack}>
-          Attaquer
+        <button type="button" onClick={handleAttack} title="Combat ☄️">
+          <img src="/katana.png" alt="Attaquer" />
         </button>
       </div>
-      <div className="battleLog">
+      <div className="battleLog" ref={battleLogRef}>
         <h4>Journal de combat</h4>
         {battleLog.map((log) => (
           <p>{log}</p>

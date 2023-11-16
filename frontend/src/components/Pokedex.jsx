@@ -35,18 +35,7 @@ function Pokemondex() {
             };
           })
         );
-
-        const capturedStatus = pokemonsDetails.reduce(
-          (statusAccumulator, pokemon) => {
-            return {
-              ...statusAccumulator,
-              [pokemon.name]: false,
-            };
-          },
-          {}
-        );
-
-        setCaptured(capturedStatus);
+        setCaptured(capturedPokemons)
         setPokemons(pokemonsDetails);
         setAllPokemons(pokemonsDetails);
       } catch (error) {
@@ -83,8 +72,13 @@ function Pokemondex() {
                 </>
               ) : (
                 <>
-                  <div className="unknown-pokemon">???</div>
-                  <div>???</div>
+                  <div
+                    className="unknown-pokemon"
+                    style={{ marginTop: "60px" }}
+                  >
+                    <img src="/zarbi.png" alt="unknown" />
+                  </div>{" "}
+                  <div className="unknown-text"> </div>
                 </>
               )}
             </li>
