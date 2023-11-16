@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import { PokemonContext } from "./PokemonContext";
 
 const images = [
@@ -60,6 +61,11 @@ function Battle() {
           )}
         </div>
       )}
+      <Link to="/hub">
+        <button type="button" className="battleButton" title="Fuir 🏃">
+          <img src="fuir.png" alt="Hub" />
+        </button>
+      </Link>
     </div>
   );
 }
