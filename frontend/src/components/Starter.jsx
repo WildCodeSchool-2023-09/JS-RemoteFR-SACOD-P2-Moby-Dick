@@ -3,23 +3,14 @@ import { Link } from "react-router-dom";
 import { PokemonContext } from "./PokemonContext";
 
 function Starter() {
-  const { addToTeam, capturedPokemons, setCaptured } =
-    useContext(PokemonContext);
+  const { addToTeam, setCaptured } = useContext(PokemonContext);
 
-  const handleAddToTeam = (pokemonName, imageUrl) => {
-    const pokemonToAdd = {
-      name: pokemonName,
-      imageUrl,
-    };
-
-    if (!capturedPokemons[pokemonName]) {
-      setCaptured((prevCaptured) => ({
-        ...prevCaptured,
-        [pokemonName]: true,
-      }));
-
-      addToTeam(pokemonToAdd);
-    }
+  const handlePokemonSelect = (pokemon) => {
+    addToTeam(pokemon);
+    setCaptured((prevCaptured) => ({
+      ...prevCaptured,
+      [pokemon.name]: true,
+    }));
   };
 
   return (
@@ -31,7 +22,13 @@ function Starter() {
           type="button"
           className=".starter-image"
           data-description="TYPE EAU 💧"
-          onClick={() => handleAddToTeam("Carapuce", "carapuce.png")}
+          onClick={() =>
+            handlePokemonSelect({
+              name: "Carapuce",
+              imageUrl:
+                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+            })
+          }
         >
           <img src="carapuce.png" alt="Carapuce" />
         </Link>
@@ -40,7 +37,13 @@ function Starter() {
           type="button"
           className=".starter-image"
           data-description="TYPE PLANTE 🌿"
-          onClick={() => handleAddToTeam("Bulbizarre", "bulbizarre.png")}
+          onClick={() =>
+            handlePokemonSelect({
+              name: "Bulbizarre",
+              imageUrl:
+                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+            })
+          }
         >
           <img src="bulbizarre.png" alt="bulbasaur" />
         </Link>
@@ -49,7 +52,13 @@ function Starter() {
           type="button"
           className=".starter-image"
           data-description="TYPE FEU 🔥"
-          onClick={() => handleAddToTeam("Salameche", "salameche.png")}
+          onClick={() =>
+            handlePokemonSelect({
+              name: "Salameche",
+              imageUrl:
+                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+            })
+          }
         >
           <img src="salameche.png" alt="Salameche" />
         </Link>
@@ -57,4 +66,5 @@ function Starter() {
     </div>
   );
 }
+
 export default Starter;
