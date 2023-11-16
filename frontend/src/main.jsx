@@ -72,6 +72,7 @@ const router = createBrowserRouter([
         <main>
           <MenuPlayer />
           <BattleWild />
+          <FightSystem />
         </main>
         <Footer />
       </>

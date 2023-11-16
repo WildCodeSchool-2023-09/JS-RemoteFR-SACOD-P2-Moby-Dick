@@ -169,8 +169,8 @@ function FightSystem() {
         )}
       </div>
       <div className="attackButton">
-        <button type="button" onClick={handleAttack}>
-          <img src="/katana2.png" alt="Attaquer" />
+        <button type="button" onClick={handleAttack} title="Combat ☄️">
+          <img src="/katana.png" alt="Attaquer" />
         </button>
       </div>
       <div className="battleLog" ref={battleLogRef}>
